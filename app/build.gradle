@@ -4,12 +4,12 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.0"
     defaultConfig {
-        applicationId "za.co.riggaroo.datecountdown"
+        applicationId "com.prayag.arch"
         minSdkVersion 19
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "za.co.riggaroo.datecountdown.injection.MockTestRunner"
+        testInstrumentationRunner "com.prayag.arch.injection.MockTestRunner"
         jackOptions {
             enabled true
         }

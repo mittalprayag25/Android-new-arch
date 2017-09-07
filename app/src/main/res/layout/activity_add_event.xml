@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/fragment"
-        class="za.co.riggaroo.datecountdown.ui.event.add.AddEventFragment"
+        class="com.prayag.arch.ui.event.add.AddEventFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

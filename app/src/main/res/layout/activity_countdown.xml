@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="za.co.riggaroo.datecountdown.ui.event.list.EventListActivity">
+    tools:context="com.prayag.arch.ui.event.list.EventListActivity">
 
 
     <fragment
         android:id="@+id/event_list_fragment"
-        class="za.co.riggaroo.datecountdown.ui.event.list.EventListFragment"
+        class="com.prayag.arch.ui.event.list.EventListFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </FrameLayout>
