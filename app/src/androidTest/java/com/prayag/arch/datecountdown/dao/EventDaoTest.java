@@ -1,4 +1,4 @@
-package com.prayag.arch.dao;
+package com.prayag.arch.event.dao;
 
 import android.app.Instrumentation;
 import android.arch.lifecycle.LiveData;
@@ -21,10 +21,10 @@ import javax.inject.Singleton;
 
 import dagger.Component;
 import com.prayag.arch.MockCountDownApplication;
-import com.prayag.arch.db.EventDatabase;
-import com.prayag.arch.entity.Event;
-import com.prayag.arch.injection.CountdownComponent;
-import com.prayag.arch.injection.MockCountdownModule;
+import com.prayag.arch.application.db.EventDatabase;
+import com.prayag.arch.application.entity.Event;
+import com.prayag.arch.application.injection.CountdownComponent;
+import com.prayag.arch.application.injection.MockCountdownModule;
 
 import static junit.framework.Assert.assertEquals;
 

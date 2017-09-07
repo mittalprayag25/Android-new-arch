@@ -9,7 +9,7 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "com.prayag.arch.injection.MockTestRunner"
+        testInstrumentationRunner "com.prayag.arch.application.injection.MockTestRunner"
         jackOptions {
             enabled true
         }

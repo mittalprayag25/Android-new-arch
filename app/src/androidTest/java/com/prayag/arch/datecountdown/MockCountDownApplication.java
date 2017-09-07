@@ -1,8 +1,9 @@
 package com.prayag.arch;
 
-import com.prayag.arch.dao.DaggerEventDaoTest_MockCountdownComponent;
-import com.prayag.arch.injection.CountdownComponent;
-import com.prayag.arch.injection.MockCountdownModule;
+import com.prayag.arch.application.CountdownApplication;
+import com.prayag.arch.event.dao.DaggerEventDaoTest_MockCountdownComponent;
+import com.prayag.arch.application.injection.CountdownComponent;
+import com.prayag.arch.application.injection.MockCountdownModule;
 
 /**
  * @author rebeccafranks

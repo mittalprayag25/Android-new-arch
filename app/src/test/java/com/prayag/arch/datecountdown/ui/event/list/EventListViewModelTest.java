@@ -24,10 +24,11 @@ import java.util.concurrent.TimeUnit;
 import io.reactivex.Completable;
 import io.reactivex.android.plugins.RxAndroidPlugins;
 import io.reactivex.schedulers.Schedulers;
-import com.prayag.arch.entity.Event;
-import com.prayag.arch.injection.CountdownComponent;
-import com.prayag.arch.repository.EventRepository;
-import com.prayag.arch.ui.event.add.AddEventViewModel;
+import com.prayag.arch.application.entity.Event;
+import com.prayag.arch.event.viewmodel.EventListViewModel;
+import com.prayag.arch.application.injection.CountdownComponent;
+import com.prayag.arch.event.injection.EventRepository;
+import com.prayag.arch.event.viewmodel.AddEventViewModel;
 
 import static junit.framework.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.any;

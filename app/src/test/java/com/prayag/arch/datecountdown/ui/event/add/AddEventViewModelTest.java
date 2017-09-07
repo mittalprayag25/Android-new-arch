@@ -13,7 +13,9 @@ import org.mockito.MockitoAnnotations;
 import io.reactivex.Completable;
 import io.reactivex.android.plugins.RxAndroidPlugins;
 import io.reactivex.schedulers.Schedulers;
-import com.prayag.arch.repository.EventRepository;
+
+import com.prayag.arch.event.viewmodel.AddEventViewModel;
+import com.prayag.arch.event.injection.EventRepository;
 
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.verify;
