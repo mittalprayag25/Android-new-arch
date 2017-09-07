@@ -34,7 +34,7 @@ public class DaggerActivity extends AppCompatActivity {
         if (activityComponent == null) {
             activityComponent = DaggerActivityComponent.builder()
                     .activityModule(new ActivityModule(this))
-                    .applicationComponent(CountdownApplication.get(this).getComponent())
+                   // .applicationComponent(CountdownApplication.get(this).getComponent())
                     .build();
         }
         return activityComponent;

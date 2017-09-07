@@ -39,7 +39,7 @@ public class DaggerSelfActivity extends AppCompatActivity {
         if (component == null) {
             component = DaggerSelfComponent.builder()
                     .selfModule(new SelfModule())
-                    .applicationComponent(CountdownApplication.get(this).getComponent())
+                   // .applicationComponent(CountdownApplication.get(this).getComponent())
                     .build();
         }
         return component;
