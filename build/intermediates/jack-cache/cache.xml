@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/pmittal/.android/build-cache/eb24a164af2a7c7c4f36ea3b6bc373dab2d76000/output/jars/classes.jar"
+        revision="26.0.0"
+        sha1="e300bd648b3784971b984858f0dde1cc66951964">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-9d1f55bc1e380d67bbdb7fd826d6549519af9b76.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.android/build-cache/ff7bd124637c9c6cc10344774a94887884d70725/output/jars/classes.jar"
+        revision="26.0.0"
+        sha1="4119ea97a7191ff9b8f33b534ea220448f62f491">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-5230b6cb5530cc8e1e21e8f93e61d5a8c3a9cf26.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.android/build-cache/7553d31dfa173ccd1529bbb20fff35999099ee46/output/jars/classes.jar"
+        revision="26.0.0"
+        sha1="6ce259d1bd16f24cf3aaa40345082e01b2d21365">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-91591e176f019c9d69bd227f290da21daf826d34.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.gradle/caches/modules-2/files-2.1/com.android.support.constraint/constraint-layout-solver/1.1.0-beta1/4205dd8c33ada1468ab377afff0be95304ef72a/constraint-layout-solver-1.1.0-beta1.jar"
+        revision="26.0.0"
+        sha1="04205dd8c33ada1468ab377afff0be95304ef72a">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/constraint-layout-solver-1.1.0-beta1-d0fb33a0ea7d36b248cfcd757a1e0aefcbc537e5.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.android/build-cache/a5956ce6b04ac07c067da220ea6ce884d5d22f47/output/jars/classes.jar"
+        revision="26.0.0"
+        sha1="eeb2226439fc09924584ada5b2f61a2ecdfe15a6">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-ad0e03e21784a2769cd79a5803f7bc8fec024106.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.android/build-cache/6dd661bcc01404a8174ca76ac4101cf20f0c74eb/output/jars/classes.jar"
+        revision="26.0.0"
+        sha1="e7424f816f538c2acfba6169b25e297ea22afbd8">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-b3c400ffbcea2f77c3fe6450f10c7d12a803332a.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.android/build-cache/e4ef12756977ecef783022ce7daa477f24da19fb/output/jars/classes.jar"
+        revision="26.0.0"
+        sha1="5753660caa486676aacf05857930d76589a09af9">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-48fb69e6d71bf517a24e9e367422271bc45d8a77.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.gradle/caches/modules-2/files-2.1/com.google.dagger/dagger/2.8/55a1aa1cdcfd06b9950ca856e2bc2790e105146a/dagger-2.8.jar"
+        revision="26.0.0"
+        sha1="55a1aa1cdcfd06b9950ca856e2bc2790e105146a">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/dagger-2.8-bc1aa2facb76709cf21e55bf1f73a0b1d8b2c4eb.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.android/build-cache/3651b237b813a2d1b1d70e0f5b840d7b7c96a786/output/jars/classes.jar"
+        revision="26.0.0"
+        sha1="5b6503f4b21263f11ee98bb2cc9dc9807a129a8e">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-25ec248a784b40fdf681cdbd7e3d3cb8a2b0af1b.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/common/1.0.0-alpha5/16bbceb3231045909d9b2d19758c57a30831ce9f/common-1.0.0-alpha5.jar"
+        revision="26.0.0"
+        sha1="16bbceb3231045909d9b2d19758c57a30831ce9f">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/common-1.0.0-alpha5-177a104861f367792d07e6d9b8d5a91230029cef.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.gradle/caches/modules-2/files-2.1/javax.annotation/jsr250-api/1.0/5025422767732a1ab45d93abfea846513d742dcf/jsr250-api-1.0.jar"
+        revision="26.0.0"
+        sha1="5025422767732a1ab45d93abfea846513d742dcf">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackRuntimeLibraries/debug/jars/8000/40/jsr250-api-1.0-30dc2a6fe5f358b664cc944e9d09e28c2be45b8d.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.android/build-cache/5762bb4d30f5cee74eceb9e42b240093dc62b362/output/jars/classes.jar"
+        revision="26.0.0"
+        sha1="113afb69fdd5c66bf9aaa1bf425105a3fbbfa10c">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-4fe4b75dc5e806cd96824720cf24175d4ecb3228.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.android/build-cache/bd2c222cd49e0bf2f3d308571239026e00bcbf8c/output/jars/classes.jar"
+        revision="26.0.0"
+        sha1="30305be7e5eacf82de3a96c92082eaab5e22fef2">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-56fd8462e9003f24b74b0b743c72ba4a182a64d1.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.android/build-cache/c8b623898b5d7631ec97ac4560e5e71483e67ab5/output/jars/classes.jar"
+        revision="26.0.0"
+        sha1="c74c28a44292b6480afe69ddb2c0974f45393a3a">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-54fec29121206ebbb0662c55399fb61438dfa888.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.0.0-alpha5/ef1ec521c95486fb256b3677a95c340ce9c49407/common-1.0.0-alpha5.jar"
+        revision="26.0.0"
+        sha1="ef1ec521c95486fb256b3677a95c340ce9c49407">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/common-1.0.0-alpha5-9ed4e04bca1d214a1d9f089959ac80c02fe1a54d.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/26.0.0-beta2/e5ef6e4822404221c9b03dff0d31e4810ac3fb0d/support-annotations-26.0.0-beta2.jar"
+        revision="26.0.0"
+        sha1="e5ef6e4822404221c9b03dff0d31e4810ac3fb0d">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/support-annotations-26.0.0-beta2-8a732674f70f2779244bd7fbae5448063b214fb5.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        revision="26.0.0"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/javax.inject-1-cc22fdd7ffbb716f89f6738003f3b921f79cb055.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.android/build-cache/bb3cf605b447aba48b840a488dbdafc26600316d/output/jars/classes.jar"
+        revision="26.0.0"
+        sha1="14b6254806b82e8c7c000963d9ea1a611950cc78">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-7801de1a79e18abe817d7e5f99e1f22bc552537d.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.android/build-cache/8ddbec9065fedb9521b3d1b7c844a5d88938c914/output/jars/classes.jar"
+        revision="26.0.0"
+        sha1="35f961fae9306ee1f783eaf052f25c37dfc48a8a">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-3f5cdaf9f81e8b8c387398136d76fa5b633897e9.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.android/build-cache/f9f7c25c866f4c6672cee4a6be414a476dec174d/output/jars/classes.jar"
+        revision="26.0.0"
+        sha1="73b599658b6d04643cc81d810fe7a6a96e4b2b5b">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-5c56df0d9863af12595cb5079cfcfbd19675be14.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.android/build-cache/c36f86aa54ccc19a8d3249d4b36352329aeb3003/output/jars/classes.jar"
+        revision="26.0.0"
+        sha1="55114222f50b17afbaff18c30062c4b3c8ddd278">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-355db983e260f5adc33de57925e80aa14b6284dd.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.android/build-cache/71b78e825e340070eff5f1fa841369d9e560fb64/output/jars/classes.jar"
+        revision="26.0.0"
+        sha1="2f6369061e3e8cde1528618dfdff8105e1742bf5">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-51d51fe88aeaaf3baf7d896c61bf57a50319dfb0.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.android/build-cache/1613d0bfb2ee2f88cc5316ce61e21285423cc125/output/jars/classes.jar"
+        revision="26.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-732b243ca8e56f4d247921ed2690cc1a87327ca7.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/Library/Android/sdk/platforms/android-26/android.jar"
+        revision="26.0.0"
+        sha1="18eaee6ff2a1c15c603daafb41277ea9376f30b5">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackRuntimeLibraries/debug/jars/8000/40/android-0eddc4db6de837ccd769f4bbf847da1217a617d8.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.android/build-cache/93f7f09a731f18213344c10d3d305acf76a335e9/output/jars/classes.jar"
+        revision="26.0.0"
+        sha1="c0a9dbd76f7de3683d8e80fda10f2389e391958f">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-d823d5c1f0c4f32bde4b97992042c75c71f3597a.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.android/build-cache/4020f6e0210fdf68fee203b6db3fc93ea6a63dba/output/jars/classes.jar"
+        revision="26.0.0"
+        sha1="5d8315789fd7530784fbbc72bb3ac1a016fa703c">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-ec7f5183b51862a4cbf654c21f133ba0615b52a0.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.0/14b8c877d98005ba3941c9257cfe09f6ed0e0d74/reactive-streams-1.0.0.jar"
+        revision="26.0.0"
+        sha1="14b8c877d98005ba3941c9257cfe09f6ed0e0d74">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/reactive-streams-1.0.0-40e6ed8c68bcd7d49a28a399b06e54e5afb2286b.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.gradle/caches/modules-2/files-2.1/org.threeten/threetenbp/1.3.3/309242e12648832e7fd9cf253646aec27b3827a0/threetenbp-1.3.3-no-tzdb.jar"
+        revision="26.0.0"
+        sha1="309242e12648832e7fd9cf253646aec27b3827a0">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/threetenbp-1.3.3-no-tzdb-59d45b35ee1794740b03f0ba68b05bfa729a03c6.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.gradle/caches/modules-2/files-2.1/android.arch.persistence.room/common/1.0.0-alpha5/da7c4f373e9a9e114fc3a12edcbb7bd7f8822b4b/common-1.0.0-alpha5.jar"
+        revision="26.0.0"
+        sha1="da7c4f373e9a9e114fc3a12edcbb7bd7f8822b4b">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/common-1.0.0-alpha5-4e87ed4455033013f87e1ee0c51669427d4f941d.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.android/build-cache/098699fdb9d63e7722616c5697071b8ddaf6c44e/output/jars/classes.jar"
+        revision="26.0.0"
+        sha1="76245722a4ca45146f008723a62de4fc462505c1">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-08cf474d5cdb9252575cac5bcbcdae26f8c8d41a.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.android/build-cache/f739a7fb6611f089f0dc8e618440903ae22e13db/output/jars/classes.jar"
+        revision="26.0.0"
+        sha1="af7033d1889f6d98ba978a9e26d9ae8d3333c4da">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-8045e7588830993ead4d40f330a1971f31c9484b.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/Library/Android/sdk/platforms/android-26/optional/org.apache.http.legacy.jar"
+        revision="26.0.0"
+        sha1="d5b8c556427a60ed5f7f0abc415555de7bbba1ad">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackRuntimeLibraries/debug/jars/8000/40/org.apache.http.legacy-97aa9cd3fdf0d25fc37d459e10147c93de0b14ef.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.android/build-cache/6fabe500aec2d265b9fc5212a4b98f954860cebd/output/jars/classes.jar"
+        revision="26.0.0"
+        sha1="4e989c9e1ff3ab892b8b82dd574d3da763eb3ac5">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-29db8b38d7d1906fbf3591a9d2864f139bbb2883.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.1.0/2fdf84dedcaaeabb9d70cde9dbb8aad4eccb80a1/rxjava-2.1.0.jar"
+        revision="26.0.0"
+        sha1="2fdf84dedcaaeabb9d70cde9dbb8aad4eccb80a1">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/rxjava-2.1.0-87e7914d4c525aaf811037adb2a307b9554ed25f.jar" />
+    </item>
+    <item
+        jar="/Users/pmittal/.android/build-cache/51ebc7dfdd5634e4595d1a66098c007bf2efe63e/output/jars/classes.jar"
+        revision="26.0.0"
+        sha1="425afda77858230389ade1965e87c8d4a2b730a2">
+        <dex dex="/Users/pmittal/Documents/projects/android/mvvm/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-8d72b5694c55542b0e0c625dc9376410405718c6.jar" />
+    </item>
+
+</items>
