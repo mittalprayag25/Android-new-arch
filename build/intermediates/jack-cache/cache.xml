@@ -92,22 +92,10 @@
         <dex dex="/Users/pmittal/Documents/projects/android/Android-new-arch/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-8d72b5694c55542b0e0c625dc9376410405718c6.jar" />
     </item>
     <item
-        jar="/Users/pmittal/Library/Android/sdk/platforms/android-26/optional/org.apache.http.legacy.jar"
-        revision="26.0.0"
-        sha1="d5b8c556427a60ed5f7f0abc415555de7bbba1ad">
-        <dex dex="/Users/pmittal/Documents/projects/android/Android-new-arch/app/build/intermediates/transforms/preJackRuntimeLibraries/debug/jars/8000/40/org.apache.http.legacy-97aa9cd3fdf0d25fc37d459e10147c93de0b14ef.jar" />
-    </item>
-    <item
         jar="/Users/pmittal/.android/build-cache/6fabe500aec2d265b9fc5212a4b98f954860cebd/output/jars/classes.jar"
         revision="26.0.0"
         sha1="4e989c9e1ff3ab892b8b82dd574d3da763eb3ac5">
         <dex dex="/Users/pmittal/Documents/projects/android/Android-new-arch/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/classes-29db8b38d7d1906fbf3591a9d2864f139bbb2883.jar" />
-    </item>
-    <item
-        jar="/Users/pmittal/Library/Android/sdk/platforms/android-26/android.jar"
-        revision="26.0.0"
-        sha1="18eaee6ff2a1c15c603daafb41277ea9376f30b5">
-        <dex dex="/Users/pmittal/Documents/projects/android/Android-new-arch/app/build/intermediates/transforms/preJackRuntimeLibraries/debug/jars/8000/40/android-0eddc4db6de837ccd769f4bbf847da1217a617d8.jar" />
     </item>
     <item
         jar="/Users/pmittal/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.0.0-alpha5/ef1ec521c95486fb256b3677a95c340ce9c49407/common-1.0.0-alpha5.jar"
@@ -174,12 +162,6 @@
         revision="26.0.0"
         sha1="55a1aa1cdcfd06b9950ca856e2bc2790e105146a">
         <dex dex="/Users/pmittal/Documents/projects/android/Android-new-arch/app/build/intermediates/transforms/preJackPackagedLibraries/debug/jars/8000/1f/dagger-2.8-bc1aa2facb76709cf21e55bf1f73a0b1d8b2c4eb.jar" />
-    </item>
-    <item
-        jar="/Users/pmittal/.gradle/caches/modules-2/files-2.1/javax.annotation/jsr250-api/1.0/5025422767732a1ab45d93abfea846513d742dcf/jsr250-api-1.0.jar"
-        revision="26.0.0"
-        sha1="5025422767732a1ab45d93abfea846513d742dcf">
-        <dex dex="/Users/pmittal/Documents/projects/android/Android-new-arch/app/build/intermediates/transforms/preJackRuntimeLibraries/debug/jars/8000/40/jsr250-api-1.0-30dc2a6fe5f358b664cc944e9d09e28c2be45b8d.jar" />
     </item>
     <item
         jar="/Users/pmittal/.android/build-cache/eb24a164af2a7c7c4f36ea3b6bc373dab2d76000/output/jars/classes.jar"
