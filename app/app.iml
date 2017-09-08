@@ -107,7 +107,7 @@
     <orderEntry type="library" exported="" name="jsr250-api-1.0" level="project" />
     <orderEntry type="library" exported="" name="support-fragment-26.0.0-beta2" level="project" />
     <orderEntry type="library" exported="" name="support-core-ui-26.0.0-beta2" level="project" />
-    <orderEntry type="library" exported="" name="rxjava-2.1.0" level="project" />
+    <orderEntry type="library" exported="" name="rxjava-2.0.1" level="project" />
     <orderEntry type="library" exported="" name="support-db-1.0.0-alpha5" level="project" />
     <orderEntry type="library" exported="" name="reactive-streams-1.0.0" level="project" />
     <orderEntry type="library" exported="" name="support-compat-26.0.0-beta2" level="project" />
