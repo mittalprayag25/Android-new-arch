@@ -60,7 +60,7 @@ public class EventListViewModelTest {
     public void setup() {
         MockitoAnnotations.initMocks(this);
         eventListViewModel = new EventListViewModel();
-        eventListViewModel.eventRepository = eventRepository;
+    //    eventListViewModel.eventRepository = eventRepository;
 
     }
 
@@ -77,7 +77,7 @@ public class EventListViewModelTest {
         eventListViewModel.inject(new CountdownComponent() {
             @Override
             public void inject(EventListViewModel eventListViewModel) {
-                eventListViewModel.eventRepository = eventRepository;
+     //           eventListViewModel.eventRepository = eventRepository;
             }
 
             @Override

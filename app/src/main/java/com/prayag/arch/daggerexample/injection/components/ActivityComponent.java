@@ -15,5 +15,5 @@ import dagger.Component;
 public interface ActivityComponent {
     void inject(DaggerActivity activity);
 
-   // Person getPerson();
+   // TechStack getPerson();
 }

@@ -9,7 +9,8 @@ import android.widget.TextView;
 import javax.inject.Inject;
 
 import com.prayag.arch.R;
-import com.prayag.arch.daggerexample.dao.Person;
+import com.prayag.arch.application.CountdownApplication;
+import com.prayag.arch.daggerexample.dao.TechStack;
 import com.prayag.arch.daggerexample.injection.components.ActivityComponent;
 import com.prayag.arch.daggerexample.injection.components.DaggerActivityComponent;
 import com.prayag.arch.daggerexample.injection.modules.ActivityModule;
@@ -26,7 +27,7 @@ public class DaggerActivity extends AppCompatActivity {
     DataManager mDataManager;
 //
     @Inject
-    Person person;
+    TechStack techStack;
 
 
     private ActivityComponent activityComponent;
@@ -38,7 +39,7 @@ public class DaggerActivity extends AppCompatActivity {
         if (activityComponent == null) {
             activityComponent = DaggerActivityComponent.builder()
                     .activityModule(new ActivityModule(this))
-                   // .applicationComponent(CountdownApplication.get(this).getComponent())
+                    .applicationComponent(CountdownApplication.get(this).getComponent())
                     .build();
         }
         return activityComponent;
@@ -54,7 +55,7 @@ public class DaggerActivity extends AppCompatActivity {
         mTvUserInfo = (TextView) findViewById(R.id.tv_user_info);
         mTvAccessToken = (TextView) findViewById(R.id.tv_access_token);
 
-        Log.d("AGE",String.valueOf(person.getAge()));
+        Log.d("AGE",String.valueOf(techStack.getTech()));
     }
 
     @Override

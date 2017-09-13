@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.prayag.arch">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name="com.prayag.arch.application.CountdownApplication"
         android:allowBackup="true"
@@ -12,19 +14,19 @@
         android:theme="@style/AppTheme">
 
         <activity android:name="com.prayag.arch.company.ui.DaggerSelfActivity">
+
+        </activity>
+
+        <activity android:name="com.prayag.arch.event.ui.EventListActivity">
+
+        </activity>
+        <activity android:name=".daggerexample.ui.DaggerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity android:name="com.prayag.arch.daggerexample.ui.DaggerActivity">-->
-
-        <!--</activity>-->
-        <activity android:name="com.prayag.arch.event.ui.EventListActivity">
-
-        </activity>
-
         <activity android:name="com.prayag.arch.vehicle.ui.MainActivity">
 
         </activity>
