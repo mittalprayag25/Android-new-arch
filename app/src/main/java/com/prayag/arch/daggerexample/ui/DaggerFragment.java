@@ -21,6 +21,7 @@ import com.prayag.arch.daggerexample.dao.TechStack;
 import com.prayag.arch.event.viewmodel.AddEventViewModel;
 
 import org.threeten.bp.LocalDateTime;
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -54,7 +55,7 @@ public class DaggerFragment extends LifecycleFragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        viewModel = ViewModelProviders.of(this).get(ProjectListViewModel.class);
+        viewModel = ViewModelProviders.of(getActivity()).get(ProjectListViewModel.class);
 
         observeViewModel(viewModel);
     }
@@ -66,6 +67,15 @@ public class DaggerFragment extends LifecycleFragment {
             public void onChanged(@Nullable List<TechStack> projects) {
                 if (projects != null) {
                     Log.d("In Dagger fragment", String.valueOf(projects.size()));
+                    buttonAddEvent.setText(String.valueOf(projects.size()));
+                }
+            }
+        });
+        viewModel.getTestData().observe(this, new Observer<List<TechStack>>() {
+            @Override
+            public void onChanged(@Nullable List<TechStack> projects) {
+                if (projects != null) {
+                    Log.d("getTestData", String.valueOf(projects.size()));
                 }
             }
         });
@@ -79,6 +89,7 @@ public class DaggerFragment extends LifecycleFragment {
 
     private void setupViews(View view) {
         buttonAddEvent = (Button) view.findViewById(R.id.button_add);
+        textViewCurrentDate = (TextView) view.findViewById(R.id.text_view_date_set);
     }
 
 }

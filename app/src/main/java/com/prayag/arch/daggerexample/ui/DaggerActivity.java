@@ -1,5 +1,8 @@
 package com.prayag.arch.daggerexample.ui;
 
+import android.arch.lifecycle.LifecycleActivity;
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -17,11 +20,13 @@ import com.prayag.arch.daggerexample.injection.modules.ActivityModule;
 import com.prayag.arch.application.data.DataManager;
 import com.prayag.arch.daggerexample.dao.User;
 
+import java.util.List;
+
 /**
  * Created by pmittal on 28/08/17.
  */
 
-public class DaggerActivity extends AppCompatActivity {
+public class DaggerActivity extends LifecycleActivity {
 
     @Inject
     DataManager mDataManager;
@@ -29,6 +34,7 @@ public class DaggerActivity extends AppCompatActivity {
     @Inject
     TechStack techStack;
 
+    ProjectListViewModel viewModel;
 
     private ActivityComponent activityComponent;
 
@@ -51,11 +57,24 @@ public class DaggerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         getActivityComponent().inject(this);
-
+        viewModel = ViewModelProviders.of(this).get(ProjectListViewModel.class);
         mTvUserInfo = (TextView) findViewById(R.id.tv_user_info);
         mTvAccessToken = (TextView) findViewById(R.id.tv_access_token);
-
+        observeViewModel(viewModel);
         Log.d("AGE",String.valueOf(techStack.getTech()));
+    }
+
+    private void observeViewModel(ProjectListViewModel viewModel) {
+         viewModel.getProjectListObservable().observe(this, new Observer<List<TechStack>>() {
+             @Override
+             public void onChanged(@Nullable List<TechStack> techStacks) {
+                 if (techStacks != null) {
+                     Log.d("In Dagger Activity", String.valueOf(techStacks.size()));
+                     mTvUserInfo.setText(String.valueOf(techStacks.size()));
+                 }
+             }
+         });
+
     }
 
     @Override
