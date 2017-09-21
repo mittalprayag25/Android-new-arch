@@ -1,13 +1,10 @@
 package com.prayag.arch.daggerexample.ui;
 
-import android.app.DatePickerDialog;
 import android.arch.lifecycle.LifecycleFragment;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,10 +15,8 @@ import android.widget.TextView;
 
 import com.prayag.arch.R;
 import com.prayag.arch.daggerexample.dao.TechStack;
+import com.prayag.arch.daggerexample.viewmodel.ProjectListViewModel;
 import com.prayag.arch.event.viewmodel.AddEventViewModel;
-
-import org.threeten.bp.LocalDateTime;
-import org.w3c.dom.Text;
 
 import java.util.List;
 

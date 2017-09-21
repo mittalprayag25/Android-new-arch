@@ -5,7 +5,6 @@ import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -19,6 +18,7 @@ import com.prayag.arch.daggerexample.injection.components.DaggerActivityComponen
 import com.prayag.arch.daggerexample.injection.modules.ActivityModule;
 import com.prayag.arch.application.data.DataManager;
 import com.prayag.arch.daggerexample.dao.User;
+import com.prayag.arch.daggerexample.viewmodel.ProjectListViewModel;
 
 import java.util.List;
 

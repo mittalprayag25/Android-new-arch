@@ -1,10 +1,11 @@
-package com.prayag.arch.daggerexample.ui;
+package com.prayag.arch.daggerexample.viewmodel;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 
+import com.prayag.arch.application.api.ServerApi;
 import com.prayag.arch.daggerexample.dao.TechStack;
 
 import java.util.ArrayList;

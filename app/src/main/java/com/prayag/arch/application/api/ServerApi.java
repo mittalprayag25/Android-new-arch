@@ -1,4 +1,4 @@
-package com.prayag.arch.daggerexample.ui;
+package com.prayag.arch.application.api;
 
 import android.arch.lifecycle.MutableLiveData;
 import android.util.Log;
