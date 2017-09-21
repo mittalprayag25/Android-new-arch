@@ -1,6 +1,5 @@
 package com.prayag.arch.daggerexample.ui;
 
-import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.util.Log;
 
@@ -18,33 +17,33 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by pmittal on 12/09/17.
  */
 
-public class ProjectRepository {
-    private GitHubService gitHubService;
-    private static ProjectRepository projectRepository;
+public class ServerApi {
+    private ServiceEndpoint serviceEndpoint;
+    private static ServerApi serverApi;
 
-    private ProjectRepository() {
-        //TODO this gitHubService instance will be injected using Dagger in part #2 ...
+    private ServerApi() {
+        //TODO this serviceEndpoint instance will be injected using Dagger in part #2 ...
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(GitHubService.HTTPS_API_GITHUB_URL)
+                .baseUrl(ServiceEndpoint.HTTPS_API_GITHUB_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        gitHubService = retrofit.create(GitHubService.class);
+        serviceEndpoint = retrofit.create(ServiceEndpoint.class);
     }
 
-    public synchronized static ProjectRepository getInstance() {
+    public synchronized static ServerApi getInstance() {
         //TODO No need to implement this singleton in Part #2 since Dagger will handle it ...
-        if (projectRepository == null) {
-            if (projectRepository == null) {
-                projectRepository = new ProjectRepository();
+        if (serverApi == null) {
+            if (serverApi == null) {
+                serverApi = new ServerApi();
             }
         }
-        return projectRepository;
+        return serverApi;
     }
     public MutableLiveData<List<TechStack>> getProjectList() {
         final MutableLiveData<List<TechStack>> data = new MutableLiveData<>();
         Log.d("Respoinse", "MutableLiveData");
-        gitHubService.getProjectList().enqueue(new Callback<List<TechStack>>() {
+        serviceEndpoint.getProjectList().enqueue(new Callback<List<TechStack>>() {
             @Override
             public void onResponse(Call<List<TechStack>> call, Response<List<TechStack>> response) {
                 Log.d("Respoinse", "response");

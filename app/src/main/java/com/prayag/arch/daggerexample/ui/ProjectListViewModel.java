@@ -4,7 +4,6 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
-import android.util.Log;
 
 import com.prayag.arch.daggerexample.dao.TechStack;
 
@@ -23,8 +22,8 @@ public class ProjectListViewModel extends AndroidViewModel {
         super(application);
 
         // If any transformation is needed, this can be simply done by Transformations class ...
-        projectListObservable = ProjectRepository.getInstance().getProjectList();
-        testData = ProjectRepository.getInstance().getProjectList();
+        projectListObservable = ServerApi.getInstance().getProjectList();
+        testData = ServerApi.getInstance().getProjectList();
     }
 
     /**
