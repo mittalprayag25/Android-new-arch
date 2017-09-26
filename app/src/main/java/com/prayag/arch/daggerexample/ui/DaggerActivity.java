@@ -6,6 +6,8 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import javax.inject.Inject;
@@ -26,11 +28,11 @@ import java.util.List;
  * Created by pmittal on 28/08/17.
  */
 
-public class DaggerActivity extends LifecycleActivity {
+public class DaggerActivity extends LifecycleActivity implements View.OnClickListener{
 
     @Inject
     DataManager mDataManager;
-//
+
     @Inject
     TechStack techStack;
 
@@ -40,6 +42,7 @@ public class DaggerActivity extends LifecycleActivity {
 
     private TextView mTvUserInfo;
     private TextView mTvAccessToken;
+    private Button addUserButton, deleteUserButton;
 
     public ActivityComponent getActivityComponent() {
         if (activityComponent == null) {
@@ -60,10 +63,26 @@ public class DaggerActivity extends LifecycleActivity {
         viewModel = ViewModelProviders.of(this).get(ProjectListViewModel.class);
         mTvUserInfo = (TextView) findViewById(R.id.tv_user_info);
         mTvAccessToken = (TextView) findViewById(R.id.tv_access_token);
+        addUserButton = (Button) findViewById(R.id.addUser);
+        deleteUserButton = (Button) findViewById(R.id.deleteUser);
         observeViewModel(viewModel);
+        observeUser(viewModel);
         Log.d("AGE",String.valueOf(techStack.getTech()));
     }
 
+    private void observeUser(ProjectListViewModel viewModel) {
+
+        viewModel.getUpdatedUser().observe(this, new Observer<List<User>>() {
+            @Override
+            public void onChanged(@Nullable List<User> users) {
+                Log.d("In Activity USer Value", String.valueOf(users.size()));
+                Log.d("In Activity USer Value", users.get(0).getName().toString());
+
+                int size = users.size();
+                mTvUserInfo.setText(users.get(0).getName().toString());
+            }
+        });
+    }
     private void observeViewModel(ProjectListViewModel viewModel) {
          viewModel.getProjectListObservable().observe(this, new Observer<List<TechStack>>() {
              @Override
@@ -80,26 +99,46 @@ public class DaggerActivity extends LifecycleActivity {
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        createUser();
-        getUser();
-        mDataManager.saveAccessToken("ASDR12443JFDJF43543J543H3K543");
+     //   createUser();
+      //  getUser();
+//        mDataManager.saveAccessToken("ASDR12443JFDJF43543J543H3K543");
+//
+//        String token = mDataManager.getAccessToken();
+//        if(token != null){
+//            mTvAccessToken.setText(token);
+//        }
+    }
+//
+//    private void addUser(){
+//        try {
+//            mDataManager.createUser(new User("Ali", "1367, Gurgaon, Haryana, India"));
+//        }catch (Exception e){e.printStackTrace();}
+//    }
+//
+//    private void getUser(){
+//        try {
+//            User user = mDataManager.getUser(1L);
+//            mTvUserInfo.setText(user.toString());
+//        }catch (Exception e){e.printStackTrace();}
+//    }
+//
+//    private void deleteUser(){
+//        try {
+//            User user = mDataManager.getUser(1L);
+//            mTvUserInfo.setText(user.toString());
+//        }catch (Exception e){e.printStackTrace();}
+//    }
 
-        String token = mDataManager.getAccessToken();
-        if(token != null){
-            mTvAccessToken.setText(token);
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.addUser :
+                viewModel.addUser(mDataManager);
+                break;
+            case R.id.deleteUser :
+                viewModel.deleteUser(mDataManager);
+                break;
+
         }
-    }
-
-    private void createUser(){
-        try {
-            mDataManager.createUser(new User("Ali", "1367, Gurgaon, Haryana, India"));
-        }catch (Exception e){e.printStackTrace();}
-    }
-
-    private void getUser(){
-        try {
-            User user = mDataManager.getUser(1L);
-            mTvUserInfo.setText(user.toString());
-        }catch (Exception e){e.printStackTrace();}
     }
 }

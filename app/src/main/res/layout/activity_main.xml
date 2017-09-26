@@ -21,11 +21,25 @@
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
         android:padding="10dp"/>
+    <Button
+        android:id="@+id/addUser"
+        android:text="Add User"
+        android:layout_toRightOf="@id/tv_user_info"
+        android:layout_width="wrap_content"
+        android:onClick="onClick"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/deleteUser"
+        android:layout_toRightOf="@id/tv_user_info"
+        android:layout_width="wrap_content"
+        android:text="Delete Useer"
+        android:layout_below="@id/addUser"
+        android:layout_height="wrap_content" />
 
     <fragment
         android:id="@+id/daggerFragment"
         class="com.prayag.arch.daggerexample.ui.DaggerFragment"
-        android:layout_below="@id/tv_access_token"
+        android:layout_below="@id/deleteUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </RelativeLayout>
