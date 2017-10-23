@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by pmittal on 12/09/17.
  */
 
-public class ServerApi {
+public class ServerApi implements ServerRepository{
     private ServiceEndpoint serviceEndpoint;
     private static ServerApi serverApi;
 
@@ -40,6 +40,8 @@ public class ServerApi {
         }
         return serverApi;
     }
+
+    @Override
     public MutableLiveData<List<TechStack>> getProjectList() {
         final MutableLiveData<List<TechStack>> data = new MutableLiveData<>();
         Log.d("Respoinse", "MutableLiveData");
@@ -59,6 +61,4 @@ public class ServerApi {
 
         return data;
     }
-
-
 }
