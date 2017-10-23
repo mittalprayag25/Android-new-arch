@@ -5,7 +5,7 @@ import android.content.Context;
 
 import dagger.Module;
 import dagger.Provides;
-import com.prayag.arch.daggerexample.dao.Person;
+import com.prayag.arch.daggerexample.dao.TechStack;
 import com.prayag.arch.application.diQualifier.ActivityContext;
 
 /**
@@ -33,7 +33,7 @@ public class ActivityModule {
     }
 
     @Provides
-    Person getPerson(){
-        return new Person();
+    TechStack getPerson(){
+        return new TechStack();
     }
 }
