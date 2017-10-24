@@ -1,4 +1,4 @@
-package com.prayag.arch.daggerexample.dao;
+package com.prayag.arch.user.dao;
 
 /**
  * Created by pmittal on 28/08/17.

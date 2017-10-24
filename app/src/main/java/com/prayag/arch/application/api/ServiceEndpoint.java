@@ -1,12 +1,11 @@
 package com.prayag.arch.application.api;
 
-import com.prayag.arch.daggerexample.dao.TechStack;
+import com.prayag.arch.user.dao.TechStack;
 
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
 
 /**
  * Created by pmittal on 12/09/17.

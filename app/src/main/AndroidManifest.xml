@@ -18,7 +18,7 @@
         <activity android:name="com.prayag.arch.event.ui.EventListActivity">
 
         </activity>
-        <activity android:name=".daggerexample.ui.DaggerActivity">
+        <activity android:name=".user.ui.DaggerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

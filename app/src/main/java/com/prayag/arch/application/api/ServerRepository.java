@@ -2,7 +2,7 @@ package com.prayag.arch.application.api;
 
 import android.arch.lifecycle.MutableLiveData;
 
-import com.prayag.arch.daggerexample.dao.TechStack;
+import com.prayag.arch.user.dao.TechStack;
 
 import java.util.List;
 

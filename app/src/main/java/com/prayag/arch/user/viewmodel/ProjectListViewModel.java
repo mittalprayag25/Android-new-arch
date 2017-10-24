@@ -1,4 +1,4 @@
-package com.prayag.arch.daggerexample.viewmodel;
+package com.prayag.arch.user.viewmodel;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
@@ -7,13 +7,11 @@ import android.arch.lifecycle.MutableLiveData;
 
 import com.prayag.arch.application.api.ServerApi;
 import com.prayag.arch.application.data.DataManager;
-import com.prayag.arch.daggerexample.dao.TechStack;
-import com.prayag.arch.daggerexample.dao.User;
+import com.prayag.arch.user.dao.TechStack;
+import com.prayag.arch.user.dao.User;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.inject.Inject;
 
 /**
  * Created by pmittal on 11/09/17.

@@ -1,4 +1,4 @@
-package com.prayag.arch.daggerexample.dao;
+package com.prayag.arch.user.dao;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

@@ -1,11 +1,11 @@
-package com.prayag.arch.daggerexample.injection.modules;
+package com.prayag.arch.user.injection.modules;
 
 import android.app.Activity;
 import android.content.Context;
 
 import dagger.Module;
 import dagger.Provides;
-import com.prayag.arch.daggerexample.dao.TechStack;
+import com.prayag.arch.user.dao.TechStack;
 import com.prayag.arch.application.diQualifier.ActivityContext;
 
 /**

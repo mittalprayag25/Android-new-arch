@@ -1,4 +1,4 @@
-package com.prayag.arch.daggerexample.ui;
+package com.prayag.arch.user.ui;
 
 import android.arch.lifecycle.LifecycleFragment;
 import android.arch.lifecycle.Observer;
@@ -14,8 +14,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.prayag.arch.R;
-import com.prayag.arch.daggerexample.dao.TechStack;
-import com.prayag.arch.daggerexample.viewmodel.ProjectListViewModel;
+import com.prayag.arch.user.dao.TechStack;
+import com.prayag.arch.user.viewmodel.ProjectListViewModel;
 import com.prayag.arch.event.viewmodel.AddEventViewModel;
 
 import java.util.List;

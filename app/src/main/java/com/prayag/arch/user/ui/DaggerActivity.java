@@ -1,4 +1,4 @@
-package com.prayag.arch.daggerexample.ui;
+package com.prayag.arch.user.ui;
 
 import android.arch.lifecycle.LifecycleActivity;
 import android.arch.lifecycle.Observer;
@@ -14,13 +14,13 @@ import javax.inject.Inject;
 
 import com.prayag.arch.R;
 import com.prayag.arch.application.CountdownApplication;
-import com.prayag.arch.daggerexample.dao.TechStack;
-import com.prayag.arch.daggerexample.injection.components.ActivityComponent;
-import com.prayag.arch.daggerexample.injection.components.DaggerActivityComponent;
-import com.prayag.arch.daggerexample.injection.modules.ActivityModule;
+import com.prayag.arch.user.dao.TechStack;
+import com.prayag.arch.user.injection.components.ActivityComponent;
+import com.prayag.arch.user.injection.components.DaggerActivityComponent;
+import com.prayag.arch.user.injection.modules.ActivityModule;
 import com.prayag.arch.application.data.DataManager;
-import com.prayag.arch.daggerexample.dao.User;
-import com.prayag.arch.daggerexample.viewmodel.ProjectListViewModel;
+import com.prayag.arch.user.dao.User;
+import com.prayag.arch.user.viewmodel.ProjectListViewModel;
 
 import java.util.List;
 

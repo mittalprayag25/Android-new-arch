@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.prayag.arch.application.diQualifier.ApplicationContext;
 import com.prayag.arch.application.diQualifier.DatabaseInfo;
-import com.prayag.arch.daggerexample.dao.User;
+import com.prayag.arch.user.dao.User;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
