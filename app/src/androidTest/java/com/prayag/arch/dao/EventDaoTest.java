@@ -21,9 +21,7 @@ import javax.inject.Singleton;
 
 import dagger.Component;
 import com.prayag.arch.MockCountDownApplication;
-import com.prayag.arch.application.db.EventDatabase;
 import com.prayag.arch.application.entity.Event;
-import com.prayag.arch.application.injection.CountdownComponent;
 import com.prayag.arch.application.injection.MockCountdownModule;
 
 import static junit.framework.Assert.assertEquals;

@@ -6,18 +6,18 @@ import android.content.Context;
 import dagger.Module;
 import dagger.Provides;
 import com.prayag.arch.user.dao.TechStack;
-import com.prayag.arch.application.diQualifier.ActivityContext;
+import com.prayag.arch.application.util.diQualifier.ActivityContext;
 
 /**
  * Created by pmittal on 28/08/17.
  */
 
 @Module
-public class ActivityModule {
+public class UserModule {
 
     Activity mActivity;
 
-    public ActivityModule(Activity activity){
+    public UserModule(Activity activity){
         mActivity = activity;
     }
 

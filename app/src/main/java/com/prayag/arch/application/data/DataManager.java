@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.util.Log;
 
-import com.prayag.arch.application.diQualifier.ApplicationContext;
+import com.prayag.arch.application.util.diQualifier.ApplicationContext;
 import com.prayag.arch.user.dao.User;
 
 import javax.inject.Inject;

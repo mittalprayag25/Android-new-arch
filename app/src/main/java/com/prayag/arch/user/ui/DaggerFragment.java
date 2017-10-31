@@ -16,7 +16,6 @@ import android.widget.TextView;
 import com.prayag.arch.R;
 import com.prayag.arch.user.dao.TechStack;
 import com.prayag.arch.user.viewmodel.ProjectListViewModel;
-import com.prayag.arch.event.viewmodel.AddEventViewModel;
 
 import java.util.List;
 
@@ -30,8 +29,6 @@ public class DaggerFragment extends LifecycleFragment {
     private EditText editTextTitle, editTextDescription;
     private Button buttonAddEvent, buttonSetDate;
     private TextView textViewCurrentDate;
-    private AddEventViewModel addEventViewModel;
-
     ProjectListViewModel viewModel;
     @Nullable
     @Override

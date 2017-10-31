@@ -31,7 +31,7 @@ public class TechStack {
     }
 
     public String getTech() {
-        return tech;
+        return "TEchxs";
     }
 
     public void setTech(String tech) {

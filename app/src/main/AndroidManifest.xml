@@ -13,11 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-
-
-        <activity android:name="com.prayag.arch.event.ui.EventListActivity">
-
-        </activity>
         <activity android:name=".user.ui.DaggerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +22,7 @@
         </activity>
 
         <activity
-            android:name="com.prayag.arch.event.ui.AddEventActivity"
+            android:name=".sla.ui.SlaActivity"
             android:windowSoftInputMode="adjustResize" />
     </application>
 

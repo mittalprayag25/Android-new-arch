@@ -1,8 +1,10 @@
 package com.prayag.arch.user.ui;
 
+import android.app.Activity;
 import android.arch.lifecycle.LifecycleActivity;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -14,10 +16,12 @@ import javax.inject.Inject;
 
 import com.prayag.arch.R;
 import com.prayag.arch.application.CountdownApplication;
+import com.prayag.arch.application.data.SharedPrefsHelper;
+import com.prayag.arch.sla.ui.SlaActivity;
 import com.prayag.arch.user.dao.TechStack;
-import com.prayag.arch.user.injection.components.ActivityComponent;
-import com.prayag.arch.user.injection.components.DaggerActivityComponent;
-import com.prayag.arch.user.injection.modules.ActivityModule;
+import com.prayag.arch.user.injection.components.DaggerUserComponent;
+import com.prayag.arch.user.injection.components.UserComponent;
+import com.prayag.arch.user.injection.modules.UserModule;
 import com.prayag.arch.application.data.DataManager;
 import com.prayag.arch.user.dao.User;
 import com.prayag.arch.user.viewmodel.ProjectListViewModel;
@@ -34,20 +38,26 @@ public class DaggerActivity extends LifecycleActivity implements View.OnClickLis
     DataManager mDataManager;
 
     @Inject
+    SharedPrefsHelper sharedPrefsHelper;
+
+    @Inject
     TechStack techStack;
 
     ProjectListViewModel viewModel;
 
-    private ActivityComponent activityComponent;
+    @Inject
+    Activity context;
+
+    private UserComponent activityComponent;
 
     private TextView mTvUserInfo;
     private TextView mTvAccessToken;
     private Button addUserButton, deleteUserButton;
 
-    public ActivityComponent getActivityComponent() {
+    public UserComponent getActivityComponent() {
         if (activityComponent == null) {
-            activityComponent = DaggerActivityComponent.builder()
-                    .activityModule(new ActivityModule(this))
+            activityComponent = DaggerUserComponent.builder()
+                    .userModule(new UserModule(this))
                     .applicationComponent(CountdownApplication.get(this).getComponent())
                     .build();
         }
@@ -68,6 +78,8 @@ public class DaggerActivity extends LifecycleActivity implements View.OnClickLis
         observeViewModel(viewModel);
         observeUser(viewModel);
         Log.d("AGE",String.valueOf(techStack.getTech()));
+        sharedPrefsHelper.put("STRING", "PRWAYAG");
+        Log.d("STRINGSGARED", sharedPrefsHelper.get("STRING", "MITTAL"));
     }
 
     private void observeUser(ProjectListViewModel viewModel) {
@@ -100,6 +112,8 @@ public class DaggerActivity extends LifecycleActivity implements View.OnClickLis
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.addUser :
+                Intent intent = new Intent(context, SlaActivity.class);
+                startActivity(intent);
                 viewModel.addUser(mDataManager);
                 break;
             case R.id.deleteUser :
