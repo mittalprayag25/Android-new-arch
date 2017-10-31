@@ -25,10 +25,7 @@ import java.util.List;
 
 public class DaggerFragment extends LifecycleFragment {
 
-    //private ProjectAdapter projectAdapter;
-    private EditText editTextTitle, editTextDescription;
-    private Button buttonAddEvent, buttonSetDate;
-    private TextView textViewCurrentDate;
+    private Button buttonAddEvent;
     ProjectListViewModel viewModel;
     @Nullable
     @Override
@@ -81,7 +78,6 @@ public class DaggerFragment extends LifecycleFragment {
 
     private void setupViews(View view) {
         buttonAddEvent = (Button) view.findViewById(R.id.button_add);
-        textViewCurrentDate = (TextView) view.findViewById(R.id.text_view_date_set);
     }
 
 }

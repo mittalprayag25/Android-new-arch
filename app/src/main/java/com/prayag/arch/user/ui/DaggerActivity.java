@@ -17,13 +17,13 @@ import javax.inject.Inject;
 import com.prayag.arch.R;
 import com.prayag.arch.application.CountdownApplication;
 import com.prayag.arch.application.data.SharedPrefsHelper;
+import com.prayag.arch.application.data.DataManager;
 import com.prayag.arch.sla.ui.SlaActivity;
 import com.prayag.arch.user.dao.TechStack;
+import com.prayag.arch.user.dao.User;
 import com.prayag.arch.user.injection.components.DaggerUserComponent;
 import com.prayag.arch.user.injection.components.UserComponent;
 import com.prayag.arch.user.injection.modules.UserModule;
-import com.prayag.arch.application.data.DataManager;
-import com.prayag.arch.user.dao.User;
 import com.prayag.arch.user.viewmodel.ProjectListViewModel;
 
 import java.util.List;
@@ -48,37 +48,40 @@ public class DaggerActivity extends LifecycleActivity implements View.OnClickLis
     @Inject
     Activity context;
 
-    private UserComponent activityComponent;
-
+    private UserComponent userComponent;
     private TextView mTvUserInfo;
     private TextView mTvAccessToken;
     private Button addUserButton, deleteUserButton;
 
-    public UserComponent getActivityComponent() {
-        if (activityComponent == null) {
-            activityComponent = DaggerUserComponent.builder()
+    public UserComponent getUserComponent() {
+        if (userComponent == null) {
+            userComponent = DaggerUserComponent.builder()
                     .userModule(new UserModule(this))
                     .applicationComponent(CountdownApplication.get(this).getComponent())
                     .build();
         }
-        return activityComponent;
+        return userComponent;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getUserComponent().inject(this);
 
-        getActivityComponent().inject(this);
         viewModel = ViewModelProviders.of(this).get(ProjectListViewModel.class);
+
         mTvUserInfo = (TextView) findViewById(R.id.tv_user_info);
         mTvAccessToken = (TextView) findViewById(R.id.tv_access_token);
         addUserButton = (Button) findViewById(R.id.addUser);
         deleteUserButton = (Button) findViewById(R.id.deleteUser);
+
         observeViewModel(viewModel);
         observeUser(viewModel);
-        Log.d("AGE",String.valueOf(techStack.getTech()));
+
         sharedPrefsHelper.put("STRING", "PRWAYAG");
+
+        Log.d("AGE",String.valueOf(techStack.getTech()));
         Log.d("STRINGSGARED", sharedPrefsHelper.get("STRING", "MITTAL"));
     }
 

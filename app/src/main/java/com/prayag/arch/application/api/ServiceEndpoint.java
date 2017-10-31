@@ -1,5 +1,6 @@
 package com.prayag.arch.application.api;
 
+import com.prayag.arch.sla.dao.CitizenAlert;
 import com.prayag.arch.user.dao.TechStack;
 
 import java.util.List;
@@ -16,5 +17,8 @@ public interface ServiceEndpoint {
 
     @GET("test")
     Call<List<TechStack>> getProjectList();
+
+    @GET("alerts")
+    Call<List<CitizenAlert>> getCitizenAlerts();
 
 }

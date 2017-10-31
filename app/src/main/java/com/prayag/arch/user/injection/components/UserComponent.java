@@ -1,9 +1,9 @@
 package com.prayag.arch.user.injection.components;
 
 import com.prayag.arch.application.injection.ApplicationComponent;
-import com.prayag.arch.user.ui.DaggerActivity;
-import com.prayag.arch.user.injection.modules.UserModule;
 import com.prayag.arch.application.util.diQualifier.PerActivity;
+import com.prayag.arch.user.injection.modules.UserModule;
+import com.prayag.arch.user.ui.DaggerActivity;
 
 import dagger.Component;
 
