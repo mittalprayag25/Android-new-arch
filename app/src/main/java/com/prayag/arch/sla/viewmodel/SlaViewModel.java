@@ -5,12 +5,23 @@ import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
+import android.util.Log;
 
 import com.prayag.arch.application.api.ServerApi;
+import com.prayag.arch.application.api.TestGag;
 import com.prayag.arch.sla.dao.CitizenAlert;
+import com.prayag.arch.sla.injection.components.DaggerSlaViewModelComponent;
+import com.prayag.arch.sla.injection.components.DaggerTestGagComponent;
+import com.prayag.arch.sla.injection.components.SlaViewModelComponent;
+import com.prayag.arch.sla.injection.components.TestGagComponent;
+import com.prayag.arch.sla.injection.modules.SlaViewModelModule;
+import com.prayag.arch.sla.injection.modules.TestGagModule;
+import com.prayag.arch.sla.ui.SlaFragment;
 import com.prayag.arch.user.dao.User;
 
 import java.util.List;
+
+import javax.inject.Inject;
 
 /**
  * Created by pmittal on 31/10/17.
@@ -18,10 +29,22 @@ import java.util.List;
 
 public class SlaViewModel extends AndroidViewModel {
 
+    @Inject
+    TestGag testGag;
+    SlaViewModelComponent slaViewModelComponent;
+
     MutableLiveData<List<CitizenAlert>> citizenLiveData;
 
     public SlaViewModel(Application application) {
         super(application);
+
+        if(slaViewModelComponent == null){
+            slaViewModelComponent = DaggerSlaViewModelComponent.builder()
+                    .slaViewModelModule(new SlaViewModelModule())
+                    .build();
+        }
+        slaViewModelComponent.inject(SlaViewModel.this);
+        Log.d("SLAFRAGMENT", testGag.getName());
         citizenLiveData = ServerApi.getInstance().getCitizenAlerts();
     }
 
