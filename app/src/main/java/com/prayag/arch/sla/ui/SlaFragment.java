@@ -15,11 +15,18 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.prayag.arch.R;
+import com.prayag.arch.application.CountdownApplication;
+import com.prayag.arch.application.api.TestGag;
 import com.prayag.arch.application.data.DataManager;
 import com.prayag.arch.sla.dao.CitizenAlert;
+import com.prayag.arch.sla.injection.components.DaggerTestGagComponent;
+import com.prayag.arch.sla.injection.components.TestGagComponent;
+import com.prayag.arch.sla.injection.modules.TestGagModule;
 import com.prayag.arch.sla.viewmodel.SlaViewModel;
 import com.prayag.arch.user.dao.TechStack;
 import com.prayag.arch.user.dao.User;
+import com.prayag.arch.user.injection.components.DaggerUserComponent;
+import com.prayag.arch.user.injection.modules.UserModule;
 import com.prayag.arch.user.viewmodel.ProjectListViewModel;
 
 import java.util.List;
@@ -37,14 +44,22 @@ public class SlaFragment extends LifecycleFragment {
     private Button buttonAddEvent, buttonSetDate;
     private TextView textViewCurrentDate;
     SlaViewModel slaViewModel;
+    TestGagComponent testGagComponent;
+
 
     @Inject
-    DataManager dataManager;
+    TestGag testGag;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        if(testGagComponent == null){
+            testGagComponent = DaggerTestGagComponent.builder()
+                    .testGagModule(new TestGagModule(getActivity()))
+                    .build();
+        }
+        testGagComponent.inject(SlaFragment.this);
+        Log.d("SLAFRAGMENT", testGag.getName());
     }
 
     @Nullable
@@ -56,7 +71,7 @@ public class SlaFragment extends LifecycleFragment {
             @Override
             public void onClick(View view) {
                 try {
-                    User user = dataManager.getUser(1L);
+              //      User user = dataManager.getUser(1L);
                 }catch (Exception e){e.printStackTrace();}
                // updateData();
             }
