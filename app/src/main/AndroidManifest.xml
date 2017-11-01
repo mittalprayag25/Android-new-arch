@@ -13,25 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="com.prayag.arch.company.ui.DaggerSelfActivity">
-
-        </activity>
-
-        <activity android:name="com.prayag.arch.event.ui.EventListActivity">
-
-        </activity>
-        <activity android:name=".daggerexample.ui.DaggerActivity">
+        <activity android:name=".user.ui.DaggerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.prayag.arch.vehicle.ui.MainActivity">
 
-        </activity>
         <activity
-            android:name="com.prayag.arch.event.ui.AddEventActivity"
+            android:name=".sla.ui.SlaActivity"
             android:windowSoftInputMode="adjustResize" />
     </application>
 

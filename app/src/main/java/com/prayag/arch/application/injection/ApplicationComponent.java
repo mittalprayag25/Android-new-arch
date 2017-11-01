@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.prayag.arch.application.CountdownApplication;
-import com.prayag.arch.application.diQualifier.ApplicationContext;
+import com.prayag.arch.application.util.diQualifier.ApplicationContext;
 import com.prayag.arch.application.data.DataManager;
 import com.prayag.arch.application.data.DbHelper;
 import com.prayag.arch.application.data.SharedPrefsHelper;
@@ -18,7 +18,7 @@ import dagger.Component;
  */
 
 @Singleton
-@Component(modules = ApplicationModule.class)
+@Component(modules = {ApplicationModule.class})
 public interface ApplicationComponent {
 
     void inject(CountdownApplication daggerApplication);
@@ -33,7 +33,6 @@ public interface ApplicationComponent {
     SharedPrefsHelper getPreferenceHelper();
 
     DbHelper getDbHelper();
-
 
 
 }

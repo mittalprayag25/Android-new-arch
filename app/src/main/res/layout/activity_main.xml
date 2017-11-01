@@ -38,7 +38,7 @@
 
     <fragment
         android:id="@+id/daggerFragment"
-        class="com.prayag.arch.daggerexample.ui.DaggerFragment"
+        class="com.prayag.arch.user.ui.DaggerFragment"
         android:layout_below="@id/deleteUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

@@ -1,12 +1,12 @@
 package com.prayag.arch.application.api;
 
-import com.prayag.arch.daggerexample.dao.TechStack;
+import com.prayag.arch.sla.dao.CitizenAlert;
+import com.prayag.arch.user.dao.TechStack;
 
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
 
 /**
  * Created by pmittal on 12/09/17.
@@ -17,5 +17,8 @@ public interface ServiceEndpoint {
 
     @GET("test")
     Call<List<TechStack>> getProjectList();
+
+    @GET("alerts")
+    Call<List<CitizenAlert>> getCitizenAlerts();
 
 }

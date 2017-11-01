@@ -26,7 +26,6 @@ import io.reactivex.android.plugins.RxAndroidPlugins;
 import io.reactivex.schedulers.Schedulers;
 import com.prayag.arch.application.entity.Event;
 import com.prayag.arch.event.viewmodel.EventListViewModel;
-import com.prayag.arch.application.injection.CountdownComponent;
 import com.prayag.arch.event.injection.EventRepository;
 import com.prayag.arch.event.viewmodel.AddEventViewModel;
 

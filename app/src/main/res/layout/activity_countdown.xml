@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.prayag.arch.event.ui.EventListActivity">
+    android:layout_height="match_parent">
 
+
+    <Button
+        android:id="@+id/updateValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="Button" />
+    <fragment
+        android:id="@+id/addFragment"
+        class="com.prayag.arch.sla.ui.SlaFragment"
+        android:layout_below="@id/updateValue"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
 
     <fragment
-        android:id="@+id/event_list_fragment"
-        class="com.prayag.arch.event.ui.EventListFragment"
+        android:id="@+id/deleteFragment"
+        class="com.prayag.arch.sla.ui.DeleteFragment"
+        android:layout_below="@id/addFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</FrameLayout>
+        android:layout_height="200dp" />
+
+</RelativeLayout>

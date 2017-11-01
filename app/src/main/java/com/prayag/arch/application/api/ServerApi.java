@@ -3,7 +3,8 @@ package com.prayag.arch.application.api;
 import android.arch.lifecycle.MutableLiveData;
 import android.util.Log;
 
-import com.prayag.arch.daggerexample.dao.TechStack;
+import com.prayag.arch.sla.dao.CitizenAlert;
+import com.prayag.arch.user.dao.TechStack;
 
 import java.util.List;
 
@@ -61,4 +62,23 @@ public class ServerApi implements ServerRepository{
 
         return data;
     }
+
+    @Override
+    public MutableLiveData<List<CitizenAlert>> getCitizenAlerts() {
+        final MutableLiveData<List<CitizenAlert>> citizenAlertData = new MutableLiveData<List<CitizenAlert>>();
+        serviceEndpoint.getCitizenAlerts().enqueue(new Callback<List<CitizenAlert>>() {
+            @Override
+            public void onResponse(Call<List<CitizenAlert>> call, Response<List<CitizenAlert>> response) {
+                citizenAlertData.setValue(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<List<CitizenAlert>> call, Throwable t) {
+
+            }
+        });
+        return citizenAlertData;
+    }
+
+
 }

@@ -4,8 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.prayag.arch.application.diQualifier.ApplicationContext;
-import com.prayag.arch.application.diQualifier.DatabaseInfo;
+import com.prayag.arch.application.util.diQualifier.ApplicationContext;
+import com.prayag.arch.application.util.diQualifier.DatabaseInfo;
 
 import dagger.Module;
 import dagger.Provides;
