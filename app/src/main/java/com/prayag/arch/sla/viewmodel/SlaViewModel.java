@@ -2,22 +2,16 @@ package com.prayag.arch.sla.viewmodel;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.ViewModel;
+import android.arch.persistence.room.Room;
 import android.util.Log;
 
 import com.prayag.arch.application.api.ServerApi;
 import com.prayag.arch.application.api.TestGag;
 import com.prayag.arch.sla.dao.CitizenAlert;
 import com.prayag.arch.sla.injection.components.DaggerSlaViewModelComponent;
-import com.prayag.arch.sla.injection.components.DaggerTestGagComponent;
 import com.prayag.arch.sla.injection.components.SlaViewModelComponent;
-import com.prayag.arch.sla.injection.components.TestGagComponent;
 import com.prayag.arch.sla.injection.modules.SlaViewModelModule;
-import com.prayag.arch.sla.injection.modules.TestGagModule;
-import com.prayag.arch.sla.ui.SlaFragment;
-import com.prayag.arch.user.dao.User;
 
 import java.util.List;
 
@@ -58,5 +52,10 @@ public class SlaViewModel extends AndroidViewModel {
         citizenAlert.setMessage(s);
         citizenAlertsList.add(0, citizenAlert);
         citizenLiveData.setValue(citizenAlertsList);
+
+        AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+                AppDatabase.class, "database-name").build();
+
+
     }
 }
