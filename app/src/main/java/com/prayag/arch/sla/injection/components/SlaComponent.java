@@ -1,6 +1,6 @@
 package com.prayag.arch.sla.injection.components;
 
-import com.prayag.arch.application.injection.ApplicationComponent;
+import com.prayag.arch.application.injection.components.ApplicationComponent;
 import com.prayag.arch.application.util.diQualifier.PerActivity;
 import com.prayag.arch.sla.injection.modules.SlaModule;
 import com.prayag.arch.sla.ui.SlaActivity;

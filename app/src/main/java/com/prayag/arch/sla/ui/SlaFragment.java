@@ -1,6 +1,5 @@
 package com.prayag.arch.sla.ui;
 
-import android.app.Fragment;
 import android.arch.lifecycle.LifecycleFragment;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -15,19 +14,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.prayag.arch.R;
-import com.prayag.arch.application.CountdownApplication;
-import com.prayag.arch.application.api.TestGag;
-import com.prayag.arch.application.data.DataManager;
+import com.prayag.arch.sla.dao.TestGag;
 import com.prayag.arch.sla.dao.CitizenAlert;
 import com.prayag.arch.sla.injection.components.DaggerTestGagComponent;
 import com.prayag.arch.sla.injection.components.TestGagComponent;
 import com.prayag.arch.sla.injection.modules.TestGagModule;
 import com.prayag.arch.sla.viewmodel.SlaViewModel;
-import com.prayag.arch.user.dao.TechStack;
-import com.prayag.arch.user.dao.User;
-import com.prayag.arch.user.injection.components.DaggerUserComponent;
-import com.prayag.arch.user.injection.modules.UserModule;
-import com.prayag.arch.user.viewmodel.ProjectListViewModel;
 
 import java.util.List;
 

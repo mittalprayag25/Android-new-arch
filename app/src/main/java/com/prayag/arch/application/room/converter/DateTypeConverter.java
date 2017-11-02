@@ -1,4 +1,4 @@
-package com.prayag.arch.application.room;
+package com.prayag.arch.application.room.converter;
 
 
 import android.arch.persistence.room.TypeConverter;

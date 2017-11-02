@@ -1,4 +1,4 @@
-package com.prayag.arch.application.api;
+package com.prayag.arch.sla.dao;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

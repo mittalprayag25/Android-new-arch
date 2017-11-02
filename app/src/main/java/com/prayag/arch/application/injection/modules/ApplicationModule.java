@@ -1,4 +1,4 @@
-package com.prayag.arch.application.injection;
+package com.prayag.arch.application.injection.modules;
 
 import android.app.Application;
 import android.content.Context;

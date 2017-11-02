@@ -1,7 +1,5 @@
 package com.prayag.arch.sla.injection.components;
 
-import com.prayag.arch.application.injection.ApplicationComponent;
-import com.prayag.arch.sla.injection.modules.SlaModule;
 import com.prayag.arch.sla.injection.modules.TestGagModule;
 import com.prayag.arch.sla.ui.SlaFragment;
 

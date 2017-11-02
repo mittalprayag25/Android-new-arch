@@ -3,15 +3,16 @@ package com.prayag.arch.sla.viewmodel;
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.MutableLiveData;
-import android.arch.persistence.room.Room;
 import android.util.Log;
 
 import com.prayag.arch.application.api.ServerApi;
-import com.prayag.arch.application.api.TestGag;
+import com.prayag.arch.application.injection.components.AppViewModelComponent;
+import com.prayag.arch.application.injection.components.DaggerAppViewModelComponent;
+import com.prayag.arch.sla.dao.TestGag;
+import com.prayag.arch.application.room.AppDatabase;
+import com.prayag.arch.application.room.entity.Citizen;
 import com.prayag.arch.sla.dao.CitizenAlert;
-import com.prayag.arch.sla.injection.components.DaggerSlaViewModelComponent;
-import com.prayag.arch.sla.injection.components.SlaViewModelComponent;
-import com.prayag.arch.sla.injection.modules.SlaViewModelModule;
+import com.prayag.arch.application.injection.modules.AppViewModelModule;
 
 import java.util.List;
 
@@ -25,36 +26,49 @@ public class SlaViewModel extends AndroidViewModel {
 
     @Inject
     TestGag testGag;
-    SlaViewModelComponent slaViewModelComponent;
 
-    MutableLiveData<List<CitizenAlert>> citizenLiveData;
+    @Inject
+    AppDatabase adb;
+
+    AppViewModelComponent appViewModelComponent;
+    Application application;
+
+    MutableLiveData<List<CitizenAlert>> citizenAlertLiveData;
 
     public SlaViewModel(Application application) {
         super(application);
-
-        if(slaViewModelComponent == null){
-            slaViewModelComponent = DaggerSlaViewModelComponent.builder()
-                    .slaViewModelModule(new SlaViewModelModule())
+        this.application = application;
+        if(appViewModelComponent == null){
+            appViewModelComponent = DaggerAppViewModelComponent.builder()
+                    .appViewModelModule(new AppViewModelModule(application))
                     .build();
         }
-        slaViewModelComponent.inject(SlaViewModel.this);
+        appViewModelComponent.inject(SlaViewModel.this);
         Log.d("SLAFRAGMENT", testGag.getName());
-        citizenLiveData = ServerApi.getInstance().getCitizenAlerts();
+        citizenAlertLiveData = ServerApi.getInstance().getCitizenAlerts();
+
     }
 
     public MutableLiveData<List<CitizenAlert>> getcitizenListObservable(){
-        return citizenLiveData;
+        return citizenAlertLiveData;
     }
 
     public void changeMessage(String s) {
-        List<CitizenAlert> citizenAlertsList = citizenLiveData.getValue();
+        Citizen citizen = new Citizen(citizenAlertLiveData.getValue().get(1).getType(),citizenAlertLiveData.getValue().get(1).getRequestId(),
+                citizenAlertLiveData.getValue().get(1).getMessage(), citizenAlertLiveData.getValue().get(1).getDueDate());
+        adb.citizenDao().addCitizenAlert(citizen);
+
+        List<Citizen> list = adb.citizenDao().getCitizenAlerts();
+        list.size();
+
+        List<CitizenAlert> citizenAlertsList = citizenAlertLiveData.getValue();
         CitizenAlert citizenAlert = citizenAlertsList.get(0);
         citizenAlert.setMessage(s);
         citizenAlertsList.add(0, citizenAlert);
-        citizenLiveData.setValue(citizenAlertsList);
+        citizenAlertLiveData.setValue(citizenAlertsList);
 
-        AppDatabase db = Room.databaseBuilder(getApplicationContext(),
-                AppDatabase.class, "database-name").build();
+      //  AppDatabase adb = AppDatabase.getInstance(application).eventDao().addEvent();
+
 
 
     }
