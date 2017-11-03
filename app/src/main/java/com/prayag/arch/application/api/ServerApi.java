@@ -3,6 +3,7 @@ package com.prayag.arch.application.api;
 import android.arch.lifecycle.MutableLiveData;
 import android.util.Log;
 
+import com.prayag.arch.planets.dao.Planets;
 import com.prayag.arch.sla.dao.CitizenAlert;
 import com.prayag.arch.user.dao.TechStack;
 
@@ -80,5 +81,22 @@ public class ServerApi implements ServerRepository{
         return citizenAlertData;
     }
 
+    @Override
+    public MutableLiveData<Planets> getPlanets() {
+        final MutableLiveData<Planets> planets = new MutableLiveData<Planets>();
+        serviceEndpoint.getPlanets().enqueue(new Callback<Planets>() {
+            @Override
+            public void onResponse(Call<Planets> call, Response<Planets> response) {
+                Log.d("Planets response", String.valueOf(response.body().getPlanet().size()));
+                planets.setValue(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<Planets> call, Throwable t) {
+                Log.d("Planets Failure", t.getMessage());
+            }
+        });
+        return planets;
+    }
 
 }
