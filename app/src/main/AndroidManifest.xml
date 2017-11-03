@@ -26,6 +26,9 @@
         <activity
             android:name=".sla.ui.SlaActivity"
             android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".planets.ui.PlanetDetailActivity">
+        </activity>
+
     </application>
 
 </manifest>

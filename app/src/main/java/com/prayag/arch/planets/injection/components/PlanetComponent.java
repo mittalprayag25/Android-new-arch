@@ -1,5 +1,7 @@
 package com.prayag.arch.planets.injection.components;
 
+import android.app.Activity;
+
 import com.prayag.arch.application.injection.components.ApplicationComponent;
 import com.prayag.arch.application.util.diQualifier.PerActivity;
 import com.prayag.arch.planets.injection.modules.PlanetModule;
@@ -14,5 +16,5 @@ import dagger.Component;
 @PerActivity
 @Component(dependencies = ApplicationComponent.class, modules = PlanetModule.class)
 public interface PlanetComponent {
-    void inject(PlanetActivity activity);
+    void inject(Activity activity);
 }

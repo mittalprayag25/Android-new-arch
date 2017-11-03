@@ -3,6 +3,7 @@ package com.prayag.arch.planets.ui;
 import android.arch.lifecycle.LifecycleActivity;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.DividerItemDecoration;
@@ -38,7 +39,7 @@ public class PlanetActivity extends LifecycleActivity implements View.OnClickLis
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_planet);
-        getSlaComponent().inject(this);
+        getPlanetComponent().inject(this);
         setViews();
         planetViewModel = ViewModelProviders.of(this).get(PlanetViewModel.class);
         observeViewModel(planetViewModel);
@@ -49,7 +50,7 @@ public class PlanetActivity extends LifecycleActivity implements View.OnClickLis
     }
 
     private void observeViewModel(PlanetViewModel planetViewModel) {
-        planetViewModel.getPlanetListObservable().observe(this, new Observer<Planets>() {
+        planetViewModel.getPlanetsListObservable().observe(this, new Observer<Planets>() {
             @Override
             public void onChanged(@Nullable Planets planets) {
                 if(planets.getResults().size()>0) {
@@ -61,7 +62,7 @@ public class PlanetActivity extends LifecycleActivity implements View.OnClickLis
         });
     }
 
-    private PlanetComponent getSlaComponent() {
+    private PlanetComponent getPlanetComponent() {
         if(planetComponent == null){
             planetComponent = DaggerPlanetComponent.builder().planetModule(new PlanetModule(this))
                     .applicationComponent(CountdownApplication.get(this).getComponent()).build();
@@ -96,8 +97,11 @@ public class PlanetActivity extends LifecycleActivity implements View.OnClickLis
     };
 
     private View.OnClickListener itemClickListener = v -> {
-        Planet event = (Planet) v.getTag();
-        Toast.makeText(this, "Clicked:" + event.getName(), Toast.LENGTH_LONG).show();
+        Planet planet = (Planet) v.getTag();
+        planetViewModel.planetSelected(planet);
+        Toast.makeText(this, "Clicked:" + planet.getName(), Toast.LENGTH_LONG).show();
+        Intent detailedPlanetIntent = new Intent(this, PlanetDetailActivity.class);
+        startActivity(detailedPlanetIntent);
     };
 
 }

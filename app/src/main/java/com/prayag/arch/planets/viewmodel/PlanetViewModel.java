@@ -31,6 +31,7 @@ public class PlanetViewModel extends AndroidViewModel {
     Application application;
 
     MutableLiveData<Planets> planetsLiveData;
+    MutableLiveData<Planet> planetLiveData = new MutableLiveData<Planet>();
 
     public PlanetViewModel(Application application) {
         super(application);
@@ -45,13 +46,21 @@ public class PlanetViewModel extends AndroidViewModel {
 
     }
 
-    public MutableLiveData<Planets> getPlanetListObservable(){
+    public MutableLiveData<Planets> getPlanetsListObservable(){
         return planetsLiveData;
+    }
+
+    public MutableLiveData<Planet> getPlanetListObservable(){
+        return planetLiveData;
     }
 
     public void deleteEvent(Planet planet) {
         Planets planets = planetsLiveData.getValue();
         planets.getResults().remove(planet);
         planetsLiveData.postValue(planets);
+    }
+
+    public void planetSelected(Planet planet){
+        planetLiveData.setValue(planet);
     }
 }
