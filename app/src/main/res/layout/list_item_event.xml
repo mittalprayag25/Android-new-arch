@@ -8,30 +8,28 @@
     android:orientation="horizontal">
 
     <TextView
-        android:id="@+id/text_view_event_name"
+        android:id="@+id/text_view_planet_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        tools:text="Event Title" />
+        tools:text="Planet" />
 
     <TextView
-        android:id="@+id/text_view_countdown"
+        android:id="@+id/text_view_climate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text_view_event_description"
         android:layout_centerHorizontal="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        tools:text="45 days away" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
-        android:id="@+id/text_view_event_description"
+        android:id="@+id/text_view_terrain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/text_view_event_name"
-        tools:text="Description of the event" />
+        android:layout_below="@+id/text_view_planet_name"
+        tools:text="Terrain" />
 
     <ImageButton
         android:id="@+id/button_delete"

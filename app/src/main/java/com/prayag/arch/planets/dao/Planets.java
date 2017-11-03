@@ -53,11 +53,11 @@ public class Planets {
         this.previous = previous;
     }
 
-    public ArrayList<Planet> getPlanet() {
+    public ArrayList<Planet> getResults() {
         return results;
     }
 
-    public void setPlanet(ArrayList<Planet> planet) {
-        this.results = planet;
+    public void setResults(ArrayList<Planet> results) {
+        this.results = results;
     }
 }

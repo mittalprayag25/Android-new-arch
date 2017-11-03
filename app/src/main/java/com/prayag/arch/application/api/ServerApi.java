@@ -87,7 +87,7 @@ public class ServerApi implements ServerRepository{
         serviceEndpoint.getPlanets().enqueue(new Callback<Planets>() {
             @Override
             public void onResponse(Call<Planets> call, Response<Planets> response) {
-                Log.d("Planets response", String.valueOf(response.body().getPlanet().size()));
+                Log.d("Planets response", String.valueOf(response.body().getResults().size()));
                 planets.setValue(response.body());
             }
 

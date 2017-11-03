@@ -10,6 +10,7 @@ import com.prayag.arch.application.injection.components.DaggerAppViewModelCompon
 import com.prayag.arch.application.injection.modules.AppViewModelModule;
 import com.prayag.arch.application.room.AppDatabase;
 import com.prayag.arch.application.room.entity.Citizen;
+import com.prayag.arch.planets.dao.Planet;
 import com.prayag.arch.planets.dao.Planets;
 
 import java.util.List;
@@ -46,5 +47,11 @@ public class PlanetViewModel extends AndroidViewModel {
 
     public MutableLiveData<Planets> getPlanetListObservable(){
         return planetsLiveData;
+    }
+
+    public void deleteEvent(Planet planet) {
+        Planets planets = planetsLiveData.getValue();
+        planets.getResults().remove(planet);
+        planetsLiveData.postValue(planets);
     }
 }
