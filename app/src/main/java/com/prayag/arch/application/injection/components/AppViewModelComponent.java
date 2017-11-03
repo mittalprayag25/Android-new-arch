@@ -14,4 +14,5 @@ import dagger.Component;
 @Component(modules = AppViewModelModule.class)
 public interface AppViewModelComponent {
     void inject(ViewModel slaViewModel);
+    void inject(SlaViewModel slaViewModel);
 }

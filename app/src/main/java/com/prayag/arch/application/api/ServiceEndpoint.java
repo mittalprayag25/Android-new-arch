@@ -14,7 +14,8 @@ import retrofit2.http.GET;
  */
 
 public interface ServiceEndpoint {
-    String HTTPS_API_GITHUB_URL = "https://swapi.co/api/";  // BAse url must end  with "/"
+   // String HTTPS_API_GITHUB_URL = "https://swapi.co/api/";  // BAse url must end  with "/"
+    String HTTPS_API_GITHUB_URL = "http://10.0.2.2:8000/api/";  // BAse url must end  with "/"
 
     @GET("test")
     Call<List<TechStack>> getProjectList();
