@@ -7,7 +7,6 @@ import com.prayag.arch.application.CountdownApplication;
 import com.prayag.arch.application.injection.modules.ApplicationModule;
 import com.prayag.arch.application.util.diQualifier.ApplicationContext;
 import com.prayag.arch.application.data.DataManager;
-import com.prayag.arch.application.data.DbHelper;
 import com.prayag.arch.application.data.SharedPrefsHelper;
 
 import javax.inject.Singleton;
@@ -32,8 +31,6 @@ public interface ApplicationComponent {
     DataManager getDataManager();
 
     SharedPrefsHelper getPreferenceHelper();
-
-    DbHelper getDbHelper();
 
 
 }

@@ -35,18 +35,6 @@ public class ApplicationModule {
     }
 
     @Provides
-    @DatabaseInfo
-    String provideDatabaseName() {
-        return "demo-dagger.db";
-    }
-
-    @Provides
-    @DatabaseInfo
-    Integer provideDatabaseVersion() {
-        return 2;
-    }
-
-    @Provides
     SharedPreferences provideSharedPrefs() {
         return mApplication.getSharedPreferences("demo-prefs", Context.MODE_PRIVATE);
     }

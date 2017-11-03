@@ -22,7 +22,6 @@ public class ProjectListViewModel extends AndroidViewModel {
     private MutableLiveData<List<TechStack>> projectListObservable;
     private MutableLiveData<List<TechStack>> testData;
     private MutableLiveData<List<User>> userLive;
-    static int va = 1;
 
     public ProjectListViewModel(Application application) {
         super(application);
@@ -63,19 +62,7 @@ public class ProjectListViewModel extends AndroidViewModel {
      */
     public void addUser(DataManager mDataManager){
         try {
-            int c = va +1;
-            mDataManager.createUser(new User("Ali"+String.valueOf(c), "1367, Gurgaon, Haryana, India"));
 
-            List<User> userList = new ArrayList<User>();
-
-            if(userLive.getValue() != null){
-                userList = userLive.getValue();
-
-            }
-            User user = mDataManager.getUser(1L);
-
-            userList.add(user);
-            userLive.setValue(userList);
         }catch (Exception e){e.printStackTrace();}
     }
 
@@ -86,7 +73,7 @@ public class ProjectListViewModel extends AndroidViewModel {
      */
     public void deleteUser(DataManager mDataManager){
         try {
-            User user = mDataManager.getUser(1L);
+
         }catch (Exception e){e.printStackTrace();}
     }
 

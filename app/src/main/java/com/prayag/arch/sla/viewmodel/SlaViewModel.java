@@ -28,16 +28,13 @@ public class SlaViewModel extends AndroidViewModel {
     TestGag testGag;
 
     @Inject
-    AppDatabase adb;
+    AppDatabase appDatabase;
 
-    AppViewModelComponent appViewModelComponent;
-    Application application;
-
-    MutableLiveData<List<CitizenAlert>> citizenAlertLiveData;
+    private AppViewModelComponent appViewModelComponent;
+    private MutableLiveData<List<CitizenAlert>> citizenAlertLiveData;
 
     public SlaViewModel(Application application) {
         super(application);
-        this.application = application;
         if(appViewModelComponent == null){
             appViewModelComponent = DaggerAppViewModelComponent.builder()
                     .appViewModelModule(new AppViewModelModule(application))
@@ -64,9 +61,9 @@ public class SlaViewModel extends AndroidViewModel {
     public void changeMessage(String s) {
         Citizen citizen = new Citizen(citizenAlertLiveData.getValue().get(1).getType(),citizenAlertLiveData.getValue().get(1).getRequestId(),
                 citizenAlertLiveData.getValue().get(1).getMessage(), citizenAlertLiveData.getValue().get(1).getDueDate());
-        adb.citizenDao().addCitizenAlert(citizen);
+        appDatabase.citizenDao().addCitizenAlert(citizen);
 
-        List<Citizen> list = adb.citizenDao().getCitizenAlerts();
+        List<Citizen> list = appDatabase.citizenDao().getCitizenAlerts();
         list.size();
 
         List<CitizenAlert> citizenAlertsList = citizenAlertLiveData.getValue();
@@ -75,7 +72,7 @@ public class SlaViewModel extends AndroidViewModel {
         citizenAlertsList.add(0, citizenAlert);
         citizenAlertLiveData.setValue(citizenAlertsList);
 
-      //  AppDatabase adb = AppDatabase.getInstance(application).eventDao().addEvent();
+      //  AppDatabase appDatabase = AppDatabase.getInstance(application).eventDao().addEvent();
 
 
 
