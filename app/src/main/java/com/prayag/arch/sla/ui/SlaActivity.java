@@ -49,6 +49,10 @@ public class SlaActivity extends LifecycleActivity implements View.OnClickListen
         updateValueButton = (Button)findViewById(R.id.updateValue);
     }
 
+    /**
+     *
+     * @param slaViewModel
+     */
     private void observeViewModel(SlaViewModel slaViewModel) {
         slaViewModel.getcitizenListObservable().observe(this, new Observer<List<CitizenAlert>>() {
             @Override

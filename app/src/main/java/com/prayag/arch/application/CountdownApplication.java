@@ -43,6 +43,10 @@ public class CountdownApplication extends Application {
         */
     }
 
+    /**
+     *
+     * @return
+     */
     public ApplicationComponent getComponent(){
         return applicationComponent;
     }

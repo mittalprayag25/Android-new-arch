@@ -26,6 +26,12 @@ public class PlanetsAdapter extends RecyclerView.Adapter<PlanetsViewHolder> {
         this.viewClickListener = viewClickListener;
     }
 
+    /**
+     *
+     * @param parent
+     * @param viewType
+     * @return
+     */
     @Override
     public PlanetsViewHolder onCreateViewHolder(ViewGroup parent,
                                                 int viewType) {
@@ -34,6 +40,11 @@ public class PlanetsAdapter extends RecyclerView.Adapter<PlanetsViewHolder> {
         return new PlanetsViewHolder(v);
     }
 
+    /**
+     *
+     * @param holder
+     * @param position
+     */
     @Override
     public void onBindViewHolder(PlanetsViewHolder holder, int position) {
         Planet planet = items.get(position);
@@ -46,11 +57,19 @@ public class PlanetsAdapter extends RecyclerView.Adapter<PlanetsViewHolder> {
         holder.itemView.setOnClickListener(viewClickListener);
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int getItemCount() {
         return items.size();
     }
 
+    /**
+     *
+     * @param planets
+     */
     public void setItems(ArrayList<Planet> planets) {
         this.items = planets;
         notifyDataSetChanged();

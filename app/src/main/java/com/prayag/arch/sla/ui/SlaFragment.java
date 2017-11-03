@@ -79,6 +79,10 @@ public class SlaFragment extends LifecycleFragment {
         observeViewModel(slaViewModel);
     }
 
+    /**
+     *
+     * @param viewModel
+     */
     private void observeViewModel(SlaViewModel viewModel) {
         // Update the list when the data changes
         viewModel.getcitizenListObservable().observe(this, new Observer<List<CitizenAlert>>() {

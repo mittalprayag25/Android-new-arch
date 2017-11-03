@@ -18,6 +18,13 @@ public class Citizen {
     private String message;
     private String dueDate;
 
+    /**
+     *
+     * @param type
+     * @param requestId
+     * @param message
+     * @param dueDate
+     */
     public Citizen(String type, int requestId, String message, String dueDate) {
         this.type = type;
         this.requestId = requestId;

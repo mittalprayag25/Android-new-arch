@@ -35,6 +35,13 @@ public class DeleteFragment extends LifecycleFragment {
 
     }
 
+    /**
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -49,6 +56,10 @@ public class DeleteFragment extends LifecycleFragment {
         return view;
     }
 
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -57,6 +68,10 @@ public class DeleteFragment extends LifecycleFragment {
         observeViewModel(slaViewModel);
     }
 
+    /**
+     *
+     * @param viewModel
+     */
     private void observeViewModel(SlaViewModel viewModel) {
         // Update the list when the data changes
         viewModel.getcitizenListObservable().observe(this, new Observer<List<CitizenAlert>>() {
@@ -72,7 +87,10 @@ public class DeleteFragment extends LifecycleFragment {
         slaViewModel.changeMessage("I am newly updated");
     }
 
-
+    /**
+     *
+     * @param view
+     */
     private void setupViews(View view) {
         buttonAddEvent = (Button) view.findViewById(R.id.button_add);
     }

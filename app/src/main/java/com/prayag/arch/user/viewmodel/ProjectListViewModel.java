@@ -57,6 +57,10 @@ public class ProjectListViewModel extends AndroidViewModel {
     }
 
 
+    /**
+     *
+     * @param mDataManager
+     */
     public void addUser(DataManager mDataManager){
         try {
             int c = va +1;
@@ -76,7 +80,10 @@ public class ProjectListViewModel extends AndroidViewModel {
     }
 
 
-
+    /**
+     *
+     * @param mDataManager
+     */
     public void deleteUser(DataManager mDataManager){
         try {
             User user = mDataManager.getUser(1L);

@@ -49,6 +49,10 @@ public class PlanetActivity extends LifecycleActivity implements View.OnClickLis
         setupRecyclerView();
     }
 
+    /**
+     *
+     * @param planetViewModel
+     */
     private void observeViewModel(PlanetViewModel planetViewModel) {
         planetViewModel.getPlanetsListObservable().observe(this, new Observer<Planets>() {
             @Override
@@ -82,7 +86,10 @@ public class PlanetActivity extends LifecycleActivity implements View.OnClickLis
         recyclerView.addItemDecoration(dividerItemDecoration);
     }
 
-
+    /**
+     *
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         switch(v.getId()){
@@ -101,6 +108,7 @@ public class PlanetActivity extends LifecycleActivity implements View.OnClickLis
         planetViewModel.planetSelected(planet);
         Toast.makeText(this, "Clicked:" + planet.getName(), Toast.LENGTH_LONG).show();
         Intent detailedPlanetIntent = new Intent(this, PlanetDetailActivity.class);
+        detailedPlanetIntent.putExtra("planetBean", planet);
         startActivity(detailedPlanetIntent);
     };
 

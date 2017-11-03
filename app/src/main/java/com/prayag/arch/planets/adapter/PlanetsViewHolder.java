@@ -14,6 +14,10 @@ public class PlanetsViewHolder extends RecyclerView.ViewHolder {
     TextView terrainTextView;
     ImageButton deleteButton;
 
+    /**
+     *
+     * @param v
+     */
     PlanetsViewHolder(View v) {
         super(v);
         planetTextView = (TextView) v.findViewById(R.id.text_view_planet_name);

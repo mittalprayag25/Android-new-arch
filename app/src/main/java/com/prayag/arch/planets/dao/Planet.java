@@ -1,5 +1,6 @@
 package com.prayag.arch.planets.dao;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.inject.Inject;
@@ -9,7 +10,7 @@ import javax.inject.Singleton;
  * Created by pmittal on 31/10/17.
  */
 
-public class Planet {
+public class Planet implements Serializable{
 
     String name;
     String rotationPeriod;

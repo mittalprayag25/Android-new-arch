@@ -49,10 +49,18 @@ public class SlaViewModel extends AndroidViewModel {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public MutableLiveData<List<CitizenAlert>> getcitizenListObservable(){
         return citizenAlertLiveData;
     }
 
+    /**
+     *
+     * @param s
+     */
     public void changeMessage(String s) {
         Citizen citizen = new Citizen(citizenAlertLiveData.getValue().get(1).getType(),citizenAlertLiveData.getValue().get(1).getRequestId(),
                 citizenAlertLiveData.getValue().get(1).getMessage(), citizenAlertLiveData.getValue().get(1).getDueDate());

@@ -29,6 +29,7 @@ public class PlanetDetailActivity extends LifecycleActivity {
     private TextView textViewTerrain;
     private TextView textViewRotation;
     private TextView textViewClimate;
+    private Planet planet;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,8 +37,22 @@ public class PlanetDetailActivity extends LifecycleActivity {
         setContentView(R.layout.planet_detail);
         getPlanetComponent().inject(this);
         setViews();
+        getViewData();
         planetViewModel = ViewModelProviders.of(this).get(PlanetViewModel.class);
         observeViewModel(planetViewModel);
+    }
+
+    private void getViewData() {
+        if(getIntent().getSerializableExtra("planetBean") != null) {
+            planet = (Planet) getIntent().getSerializableExtra("planetBean");
+            Log.d("planetbeandata", planet.getName());
+            textViewName.setText(planet.getName());
+            /**
+             *
+             * Other views can be populated here
+             *
+             * */
+        }
     }
 
     private void setViews() {
@@ -55,6 +70,10 @@ public class PlanetDetailActivity extends LifecycleActivity {
         return planetComponent;
     }
 
+    /**
+     *
+     * @param planetViewModel
+     */
     private void observeViewModel(PlanetViewModel planetViewModel) {
         planetViewModel.getPlanetListObservable().observe(this, new Observer<Planet>() {
             @Override
