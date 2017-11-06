@@ -83,4 +83,8 @@ public class PlanetViewModel extends AndroidViewModel {
     public void planetSelected(Planet planet){
         planetLiveData.setValue(planet);
     }
+
+    public String test(){
+        return "prayag";
+    }
 }
