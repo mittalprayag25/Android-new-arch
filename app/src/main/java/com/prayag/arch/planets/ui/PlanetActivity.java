@@ -1,5 +1,6 @@
 package com.prayag.arch.planets.ui;
 
+import android.app.Activity;
 import android.arch.lifecycle.LifecycleActivity;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -15,6 +16,8 @@ import android.widget.Toast;
 
 import com.prayag.arch.R;
 import com.prayag.arch.application.CountdownApplication;
+import com.prayag.arch.application.data.DataManager;
+import com.prayag.arch.application.data.SharedPrefsHelper;
 import com.prayag.arch.planets.adapter.PlanetsAdapter;
 import com.prayag.arch.planets.dao.Planet;
 import com.prayag.arch.planets.dao.Planets;
@@ -22,14 +25,26 @@ import com.prayag.arch.planets.injection.components.DaggerPlanetComponent;
 import com.prayag.arch.planets.injection.components.PlanetComponent;
 import com.prayag.arch.planets.injection.modules.PlanetModule;
 import com.prayag.arch.planets.viewmodel.PlanetViewModel;
+import com.prayag.arch.sla.ui.SlaActivity;
 
 import java.util.ArrayList;
+
+import javax.inject.Inject;
 
 /**
  * Created by pmittal on 31/10/17.
  */
 
 public class PlanetActivity extends LifecycleActivity implements View.OnClickListener{
+
+    @Inject
+    DataManager mDataManager;
+
+    @Inject
+    SharedPrefsHelper sharedPrefsHelper;
+
+    @Inject
+    Activity context;
 
     private PlanetComponent planetComponent;
     private PlanetViewModel planetViewModel;
@@ -43,6 +58,12 @@ public class PlanetActivity extends LifecycleActivity implements View.OnClickLis
         setViews();
         planetViewModel = ViewModelProviders.of(this).get(PlanetViewModel.class);
         observeViewModel(planetViewModel);
+
+        sharedPrefsHelper.put("access-token", "PRWAYAG");
+
+        Log.d("PlanetActivity", sharedPrefsHelper.get("access-token", "MITTAL"));
+        Log.d("PlanetDataManager", mDataManager.getAccessToken());
+
     }
 
     private void setViews() {
@@ -93,7 +114,9 @@ public class PlanetActivity extends LifecycleActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         switch(v.getId()){
-            case R.id.updateValue:
+            case R.id.fab_add:
+                Intent intent = new Intent(context, SlaActivity.class);
+                startActivity(intent);
                 break;
         }
     }

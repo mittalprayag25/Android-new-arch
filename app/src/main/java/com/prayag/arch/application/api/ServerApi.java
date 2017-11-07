@@ -5,7 +5,6 @@ import android.util.Log;
 
 import com.prayag.arch.planets.dao.Planets;
 import com.prayag.arch.sla.dao.CitizenAlert;
-import com.prayag.arch.user.dao.TechStack;
 
 import java.util.List;
 
@@ -13,7 +12,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-
 import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Created by pmittal on 12/09/17.
@@ -41,27 +39,6 @@ public class ServerApi implements ServerRepository{
             }
         }
         return serverApi;
-    }
-
-    @Override
-    public MutableLiveData<List<TechStack>> getProjectList() {
-        final MutableLiveData<List<TechStack>> data = new MutableLiveData<>();
-        Log.d("Respoinse", "MutableLiveData");
-        serviceEndpoint.getProjectList().enqueue(new Callback<List<TechStack>>() {
-            @Override
-            public void onResponse(Call<List<TechStack>> call, Response<List<TechStack>> response) {
-                Log.d("Respoinse", "response");
-                data.setValue(response.body());
-            }
-
-            @Override
-            public void onFailure(Call<List<TechStack>> call, Throwable t) {
-                Log.d("Respoinse", t.getMessage().toString());
-            }
-
-        });
-
-        return data;
     }
 
     @Override

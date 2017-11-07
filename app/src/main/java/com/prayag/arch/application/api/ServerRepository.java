@@ -4,7 +4,6 @@ import android.arch.lifecycle.MutableLiveData;
 
 import com.prayag.arch.planets.dao.Planets;
 import com.prayag.arch.sla.dao.CitizenAlert;
-import com.prayag.arch.user.dao.TechStack;
 
 import java.util.List;
 
@@ -13,8 +12,6 @@ import java.util.List;
  */
 
 public interface ServerRepository {
-    public MutableLiveData<List<TechStack>> getProjectList();
-
     public MutableLiveData<List<CitizenAlert>> getCitizenAlerts();
 
     public MutableLiveData<Planets> getPlanets();

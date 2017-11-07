@@ -6,6 +6,7 @@ import com.prayag.arch.application.injection.components.ApplicationComponent;
 import com.prayag.arch.application.util.diQualifier.PerActivity;
 import com.prayag.arch.planets.injection.modules.PlanetModule;
 import com.prayag.arch.planets.ui.PlanetActivity;
+import com.prayag.arch.planets.ui.PlanetDetailActivity;
 
 import dagger.Component;
 
@@ -16,5 +17,6 @@ import dagger.Component;
 @PerActivity
 @Component(dependencies = ApplicationComponent.class, modules = PlanetModule.class)
 public interface PlanetComponent {
-    void inject(Activity activity);
+    void inject(PlanetActivity activity);
+    void inject(PlanetDetailActivity activity);
 }
