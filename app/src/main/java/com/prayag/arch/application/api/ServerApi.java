@@ -4,9 +4,7 @@ import android.arch.lifecycle.MutableLiveData;
 import android.util.Log;
 
 import com.prayag.arch.planets.dao.Planets;
-import com.prayag.arch.sla.dao.CitizenAlert;
-
-import java.util.List;
+import com.prayag.arch.sla.dao.Starships;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -42,20 +40,20 @@ public class ServerApi implements ServerRepository{
     }
 
     @Override
-    public MutableLiveData<List<CitizenAlert>> getCitizenAlerts() {
-        final MutableLiveData<List<CitizenAlert>> citizenAlertData = new MutableLiveData<List<CitizenAlert>>();
-        serviceEndpoint.getCitizenAlerts().enqueue(new Callback<List<CitizenAlert>>() {
+    public MutableLiveData<Starships> getStarships() {
+        final MutableLiveData<Starships> starships = new MutableLiveData<Starships>();
+        serviceEndpoint.getStarships().enqueue(new Callback<Starships>() {
             @Override
-            public void onResponse(Call<List<CitizenAlert>> call, Response<List<CitizenAlert>> response) {
-                citizenAlertData.setValue(response.body());
+            public void onResponse(Call<Starships> call, Response<Starships> response) {
+                starships.setValue(response.body());
             }
 
             @Override
-            public void onFailure(Call<List<CitizenAlert>> call, Throwable t) {
+            public void onFailure(Call<Starships> call, Throwable t) {
 
             }
         });
-        return citizenAlertData;
+        return starships;
     }
 
     @Override

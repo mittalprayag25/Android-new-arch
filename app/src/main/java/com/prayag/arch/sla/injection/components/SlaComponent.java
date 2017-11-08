@@ -3,7 +3,7 @@ package com.prayag.arch.sla.injection.components;
 import com.prayag.arch.application.injection.components.ApplicationComponent;
 import com.prayag.arch.application.util.diQualifier.PerActivity;
 import com.prayag.arch.sla.injection.modules.SlaModule;
-import com.prayag.arch.sla.ui.SlaActivity;
+import com.prayag.arch.sla.ui.StarshipsActivity;
 
 import dagger.Component;
 
@@ -14,5 +14,5 @@ import dagger.Component;
 @PerActivity
 @Component(dependencies = ApplicationComponent.class, modules = SlaModule.class)
 public interface SlaComponent {
-    void inject(SlaActivity activity);
+    void inject(StarshipsActivity activity);
 }

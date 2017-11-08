@@ -2,7 +2,7 @@ package com.prayag.arch.sla.injection.modules;
 
 import android.app.Activity;
 
-import com.prayag.arch.sla.dao.TestGag;
+import com.prayag.arch.sla.dao.Starship;
 
 import dagger.Module;
 import dagger.Provides;
@@ -19,10 +19,5 @@ public class TestGagModule {
         this.mActivity = mActivity;
     }
 
-
-    @Provides
-    TestGag provideTest(){
-        return new TestGag();
-    }
 
 }

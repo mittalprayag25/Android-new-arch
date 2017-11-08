@@ -25,7 +25,7 @@ import com.prayag.arch.planets.injection.components.DaggerPlanetComponent;
 import com.prayag.arch.planets.injection.components.PlanetComponent;
 import com.prayag.arch.planets.injection.modules.PlanetModule;
 import com.prayag.arch.planets.viewmodel.PlanetViewModel;
-import com.prayag.arch.sla.ui.SlaActivity;
+import com.prayag.arch.sla.ui.StarshipsActivity;
 
 import java.util.ArrayList;
 
@@ -115,7 +115,7 @@ public class PlanetActivity extends LifecycleActivity implements View.OnClickLis
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.fab_add:
-                Intent intent = new Intent(context, SlaActivity.class);
+                Intent intent = new Intent(context, StarshipsActivity.class);
                 startActivity(intent);
                 break;
         }

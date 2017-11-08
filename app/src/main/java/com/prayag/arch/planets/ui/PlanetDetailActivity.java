@@ -3,25 +3,27 @@ package com.prayag.arch.planets.ui;
 import android.arch.lifecycle.LifecycleActivity;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.prayag.arch.R;
 import com.prayag.arch.application.CountdownApplication;
 import com.prayag.arch.planets.dao.Planet;
-import com.prayag.arch.planets.dao.Planets;
 import com.prayag.arch.planets.injection.components.DaggerPlanetComponent;
 import com.prayag.arch.planets.injection.components.PlanetComponent;
 import com.prayag.arch.planets.injection.modules.PlanetModule;
 import com.prayag.arch.planets.viewmodel.PlanetViewModel;
+import com.prayag.arch.sla.ui.StarshipsActivity;
 
 /**
  * Created by pmittal on 03/11/17.
  */
 
-public class PlanetDetailActivity extends LifecycleActivity {
+public class PlanetDetailActivity extends LifecycleActivity implements View.OnClickListener{
 
     private PlanetComponent planetComponent;
     private PlanetViewModel planetViewModel;
@@ -88,4 +90,13 @@ public class PlanetDetailActivity extends LifecycleActivity {
     }
 
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.takeToPlanet:
+                Intent intent = new Intent(this, StarshipsActivity.class);
+                startActivity(intent);
+                break;
+        }
+    }
 }

@@ -2,7 +2,6 @@ package com.prayag.arch.sla.ui;
 
 import android.arch.lifecycle.LifecycleActivity;
 import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,28 +11,25 @@ import android.widget.Button;
 
 import com.prayag.arch.R;
 import com.prayag.arch.application.CountdownApplication;
-import com.prayag.arch.sla.dao.CitizenAlert;
+import com.prayag.arch.sla.dao.Starship;
+import com.prayag.arch.sla.dao.Starships;
 import com.prayag.arch.sla.injection.components.DaggerSlaComponent;
 import com.prayag.arch.sla.injection.components.SlaComponent;
 import com.prayag.arch.sla.injection.modules.SlaModule;
-import com.prayag.arch.sla.viewmodel.SlaViewModel;
-
-import java.util.List;
-
-import javax.inject.Inject;
+import com.prayag.arch.sla.viewmodel.StarshipsViewModel;
 
 /**
  * Created by pmittal on 31/10/17.
  */
 
-public class SlaActivity extends LifecycleActivity implements View.OnClickListener{
+public class StarshipsActivity extends LifecycleActivity implements View.OnClickListener{
 
     private SlaComponent slaComponent;
-    private SlaViewModel slaViewModel;
+    private StarshipsViewModel starshipsViewModel;
     private Button updateValueButton;
 
-    @Inject
-    CitizenAlert citizenAlert;
+
+    Starships starshipData;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,8 +37,8 @@ public class SlaActivity extends LifecycleActivity implements View.OnClickListen
         setContentView(R.layout.activity_countdown);
         getSlaComponent().inject(this);
         setViews();
-        slaViewModel = ViewModelProviders.of(this).get(SlaViewModel.class);
-        observeViewModel(slaViewModel);
+        starshipsViewModel = ViewModelProviders.of(this).get(StarshipsViewModel.class);
+        observeViewModel(starshipsViewModel);
     }
 
     private void setViews() {
@@ -51,13 +47,15 @@ public class SlaActivity extends LifecycleActivity implements View.OnClickListen
 
     /**
      *
-     * @param slaViewModel
+     * @param starshipsViewModel
      */
-    private void observeViewModel(SlaViewModel slaViewModel) {
-        slaViewModel.getcitizenListObservable().observe(this, new Observer<List<CitizenAlert>>() {
+    private void observeViewModel(StarshipsViewModel starshipsViewModel) {
+        starshipsViewModel.getStarshipsObservable().observe(this, new Observer<Starships>() {
             @Override
-            public void onChanged(@Nullable List<CitizenAlert> citizenAlerts) {
-                Log.d("SLAVIEWMODEKL", citizenAlerts.get(0).getMessage());
+            public void onChanged(@Nullable Starships starships) {
+                Log.d("SLAVIEWMODEKL", starships.getNext());
+                starshipData = starships;
+                starshipsViewModel.saveStarshipsData(starshipData);
             }
         });
     }
@@ -81,6 +79,8 @@ public class SlaActivity extends LifecycleActivity implements View.OnClickListen
     }
 
     private void changeMessage() {
-        slaViewModel.changeMessage("Hey I am updated");
+        Starship starship = starshipData.getStarshipArrayList().get(2);
+        starship.setName("Prayag");
+        starshipsViewModel.changeMessage(starship);
     }
 }

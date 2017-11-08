@@ -14,16 +14,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.prayag.arch.R;
-import com.prayag.arch.sla.dao.TestGag;
-import com.prayag.arch.sla.dao.CitizenAlert;
+import com.prayag.arch.sla.dao.Starships;
 import com.prayag.arch.sla.injection.components.DaggerTestGagComponent;
 import com.prayag.arch.sla.injection.components.TestGagComponent;
 import com.prayag.arch.sla.injection.modules.TestGagModule;
-import com.prayag.arch.sla.viewmodel.SlaViewModel;
-
-import java.util.List;
-
-import javax.inject.Inject;
+import com.prayag.arch.sla.viewmodel.StarshipsViewModel;
 
 /**
  * Created by pmittal on 31/10/17.
@@ -35,12 +30,9 @@ public class SlaFragment extends LifecycleFragment {
     private EditText editTextTitle, editTextDescription;
     private Button buttonAddEvent, buttonSetDate;
     private TextView textViewCurrentDate;
-    SlaViewModel slaViewModel;
+    StarshipsViewModel starshipsViewModel;
     TestGagComponent testGagComponent;
 
-
-    @Inject
-    TestGag testGag;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -51,7 +43,6 @@ public class SlaFragment extends LifecycleFragment {
                     .build();
         }
         testGagComponent.inject(SlaFragment.this);
-        Log.d("SLAFRAGMENT", testGag.getName());
     }
 
     @Nullable
@@ -74,28 +65,28 @@ public class SlaFragment extends LifecycleFragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        slaViewModel = ViewModelProviders.of(getActivity()).get(SlaViewModel.class);
+        starshipsViewModel = ViewModelProviders.of(getActivity()).get(StarshipsViewModel.class);
 
-        observeViewModel(slaViewModel);
+        observeViewModel(starshipsViewModel);
     }
 
     /**
      *
      * @param viewModel
      */
-    private void observeViewModel(SlaViewModel viewModel) {
+    private void observeViewModel(StarshipsViewModel viewModel) {
         // Update the list when the data changes
-        viewModel.getcitizenListObservable().observe(this, new Observer<List<CitizenAlert>>() {
+        viewModel.getStarshipsObservable().observe(this, new Observer<Starships>() {
             @Override
-            public void onChanged(@Nullable List<CitizenAlert> citizenAlerts) {
-                Log.d("sla fragment", citizenAlerts.get(0).getMessage());
+            public void onChanged(@Nullable Starships starships) {
+                Log.d("sla fragment", starships.getNext());
             }
         });
 
     }
 
     public void updateData(){
-        slaViewModel.changeMessage("I am newly updated");
+       // starshipsViewModel.changeMessage("I am newly updated");
     }
 
 

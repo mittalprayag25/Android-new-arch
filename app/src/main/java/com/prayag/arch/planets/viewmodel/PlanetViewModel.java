@@ -9,11 +9,8 @@ import com.prayag.arch.application.injection.components.AppViewModelComponent;
 import com.prayag.arch.application.injection.components.DaggerAppViewModelComponent;
 import com.prayag.arch.application.injection.modules.AppViewModelModule;
 import com.prayag.arch.application.room.AppDatabase;
-import com.prayag.arch.application.room.entity.Citizen;
 import com.prayag.arch.planets.dao.Planet;
 import com.prayag.arch.planets.dao.Planets;
-
-import java.util.List;
 
 import javax.inject.Inject;
 

@@ -8,25 +8,26 @@ import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
-import com.prayag.arch.application.room.entity.Citizen;
+
+import com.prayag.arch.application.room.entity.StarshipEntity;
 
 import java.util.List;
 
 import static android.arch.persistence.room.OnConflictStrategy.REPLACE;
 
 @Dao
-public interface CitizenDao {
+public interface StarShipDao {
 
-    @Query("SELECT * FROM " + Citizen.TABLE_NAME)
-    List<Citizen> getCitizenAlerts();
+    @Query("SELECT * FROM " + StarshipEntity.TABLE_NAME)
+    List<StarshipEntity> getStarships();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void addCitizenAlert(Citizen citizenAlert);
+    void addStarship(StarshipEntity starshipEntity);
 
     @Delete
-    void deleteCitizenAlert(Citizen citizenAlert);
+    void deleteStarship(StarshipEntity starshipEntityAlert);
 
     @Update(onConflict = REPLACE)
-    void updateCitizenAlert(Citizen citizenAlert);
+    void updateStarShip(StarshipEntity starshipEntity);
 
 }

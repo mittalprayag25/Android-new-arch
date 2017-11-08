@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".sla.ui.SlaActivity"
+            android:name=".sla.ui.StarshipsActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity android:name=".planets.ui.PlanetDetailActivity">
         </activity>
