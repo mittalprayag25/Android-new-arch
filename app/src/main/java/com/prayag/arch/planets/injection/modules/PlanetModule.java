@@ -1,10 +1,11 @@
-package com.prayag.arch.sla.injection.modules;
+package com.prayag.arch.planets.injection.modules;
 
 import android.app.Activity;
 import android.content.Context;
 
+import com.prayag.arch.application.util.AppPermission;
 import com.prayag.arch.application.util.diQualifier.ActivityContext;
-import com.prayag.arch.sla.dao.Starships;
+import com.prayag.arch.planets.dao.Planets;
 
 import dagger.Module;
 import dagger.Provides;
@@ -14,10 +15,10 @@ import dagger.Provides;
  */
 
 @Module
-public class SlaModule {
+public class PlanetModule {
 
     Activity mActivity;
-    public SlaModule(Activity mActivity){
+    public PlanetModule(Activity mActivity){
         this.mActivity = mActivity;
     }
 
@@ -32,7 +33,13 @@ public class SlaModule {
         return mActivity;
     }
     @Provides
-    Starships getStarships(){
-        return new Starships();
+    Planets getCitizenAlerts(){
+        return new Planets();
+    }
+
+    //TODO Provide this method in dagger modules and inject in activities
+    @Provides
+    AppPermission getpermission(){
+        return new AppPermission(mActivity);
     }
 }

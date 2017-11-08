@@ -1,16 +1,15 @@
 package com.prayag.arch.application;
 
 
+
 import android.app.Application;
 import android.content.Context;
-import android.util.Log;
 
 import com.jakewharton.threetenabp.AndroidThreeTen;
 import com.prayag.arch.application.data.DataManager;
-import com.prayag.arch.application.injection.ApplicationComponent;
-import com.prayag.arch.application.injection.ApplicationModule;
-import com.prayag.arch.application.injection.DaggerApplicationComponent;
-import com.prayag.arch.user.dao.User;
+import com.prayag.arch.application.injection.components.ApplicationComponent;
+import com.prayag.arch.application.injection.components.DaggerApplicationComponent;
+import com.prayag.arch.application.injection.modules.ApplicationModule;
 
 import javax.inject.Inject;
 
@@ -44,6 +43,10 @@ public class CountdownApplication extends Application {
         */
     }
 
+    /**
+     *
+     * @return
+     */
     public ApplicationComponent getComponent(){
         return applicationComponent;
     }

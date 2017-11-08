@@ -1,11 +1,9 @@
 package com.prayag.arch.application.data;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.util.Log;
 
 import com.prayag.arch.application.util.diQualifier.ApplicationContext;
-import com.prayag.arch.user.dao.User;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -18,15 +16,12 @@ import javax.inject.Singleton;
 public class DataManager {
 
     private Context mContext;
-    private DbHelper mDbHelper;
     private SharedPrefsHelper mSharedPrefsHelper;
 
     @Inject
     public DataManager(@ApplicationContext Context context,
-                       DbHelper dbHelper,
                        SharedPrefsHelper sharedPrefsHelper) {
         mContext = context;
-        mDbHelper = dbHelper;
         mSharedPrefsHelper = sharedPrefsHelper;
     }
     public void saveAccessToken(String accessToken) {
@@ -38,12 +33,4 @@ public class DataManager {
         return mSharedPrefsHelper.get(SharedPrefsHelper.PREF_KEY_ACCESS_TOKEN, null);
     }
 
-    public Long createUser(User user) throws Exception {
-        Log.d("AccessToken", "token receiveedf");
-        return mDbHelper.insertUser(user);
-    }
-
-    public User getUser(Long userId) throws Resources.NotFoundException, NullPointerException {
-        return mDbHelper.getUser(userId);
-    }
 }

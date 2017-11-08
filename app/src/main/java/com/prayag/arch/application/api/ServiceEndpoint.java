@@ -1,7 +1,7 @@
 package com.prayag.arch.application.api;
 
-import com.prayag.arch.sla.dao.CitizenAlert;
-import com.prayag.arch.user.dao.TechStack;
+import com.prayag.arch.planets.dao.Planets;
+import com.prayag.arch.sla.dao.Starships;
 
 import java.util.List;
 
@@ -13,12 +13,13 @@ import retrofit2.http.GET;
  */
 
 public interface ServiceEndpoint {
-    String HTTPS_API_GITHUB_URL = "http://10.0.2.2:8000/api/";  // BAse url must end  with "/"
+    String HTTPS_API_GITHUB_URL = "https://swapi.co/api/";  // BAse url must end  with "/"
+   // String HTTPS_API_GITHUB_URL = "http://10.0.2.2:8000/api/";  // BAse url must end  with "/"
 
-    @GET("test")
-    Call<List<TechStack>> getProjectList();
+    @GET("starships")
+    Call<Starships> getStarships();
 
-    @GET("alerts")
-    Call<List<CitizenAlert>> getCitizenAlerts();
+    @GET("planets")
+    Call<Planets> getPlanets();
 
 }
