@@ -5,6 +5,7 @@ import android.arch.lifecycle.LifecycleActivity;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.DividerItemDecoration;
@@ -18,6 +19,8 @@ import com.prayag.arch.R;
 import com.prayag.arch.application.CountdownApplication;
 import com.prayag.arch.application.data.DataManager;
 import com.prayag.arch.application.data.SharedPrefsHelper;
+import com.prayag.arch.application.util.Constants;
+import com.prayag.arch.application.util.AppPermission;
 import com.prayag.arch.planets.adapter.PlanetsAdapter;
 import com.prayag.arch.planets.dao.Planet;
 import com.prayag.arch.planets.dao.Planets;
@@ -46,6 +49,9 @@ public class PlanetActivity extends LifecycleActivity implements View.OnClickLis
     @Inject
     Activity context;
 
+    @Inject
+    AppPermission appPermission;
+
     private PlanetComponent planetComponent;
     private PlanetViewModel planetViewModel;
     private PlanetsAdapter adapter;
@@ -54,8 +60,11 @@ public class PlanetActivity extends LifecycleActivity implements View.OnClickLis
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_planet);
+
         getPlanetComponent().inject(this);
+
         setViews();
+        //TODO Call viewmodel to get an access to data
         planetViewModel = ViewModelProviders.of(this).get(PlanetViewModel.class);
         observeViewModel(planetViewModel);
 
@@ -89,6 +98,7 @@ public class PlanetActivity extends LifecycleActivity implements View.OnClickLis
 
     private PlanetComponent getPlanetComponent() {
         if(planetComponent == null){
+            //TODO calling application component with local activity component here to get dependencies declared in applicationComponent
             planetComponent = DaggerPlanetComponent.builder().planetModule(new PlanetModule(this))
                     .applicationComponent(CountdownApplication.get(this).getComponent()).build();
         }
@@ -124,6 +134,8 @@ public class PlanetActivity extends LifecycleActivity implements View.OnClickLis
     private View.OnClickListener deleteClickListener = v -> {
         Planet planet = (Planet) v.getTag();
         planetViewModel.deleteEvent(planet);
+        //TODO Below is a way to use Permissions. Include the Permission in this activity dagger module and inject here
+        appPermission.takeUserPermission(Constants.PermissionType.CAMERA_PERMISSOIN_CODE);
     };
 
     private View.OnClickListener itemClickListener = v -> {
@@ -135,4 +147,17 @@ public class PlanetActivity extends LifecycleActivity implements View.OnClickLis
         startActivity(detailedPlanetIntent);
     };
 
+    @Override
+    public void onRequestPermissionsResult(final int requestCode, String[] permissions, int[] grantResults) {
+        if(requestCode == Constants.PermissionType.CAMERA_PERMISSOIN_CODE) {
+            if(grantResults.length > 0) {
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Log.d("CAMERA_PERMISSOIN_CODE", "GRANTED");
+                }
+                else if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
+                    Log.d("CAMERA_PERMISSOIN_CODE", "DENIED");
+                }
+            }
+        }
+    }
 }

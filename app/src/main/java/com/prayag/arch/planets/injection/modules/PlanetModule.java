@@ -3,6 +3,7 @@ package com.prayag.arch.planets.injection.modules;
 import android.app.Activity;
 import android.content.Context;
 
+import com.prayag.arch.application.util.AppPermission;
 import com.prayag.arch.application.util.diQualifier.ActivityContext;
 import com.prayag.arch.planets.dao.Planets;
 
@@ -34,5 +35,11 @@ public class PlanetModule {
     @Provides
     Planets getCitizenAlerts(){
         return new Planets();
+    }
+
+    //TODO Provide this method in dagger modules and inject in activities
+    @Provides
+    AppPermission getpermission(){
+        return new AppPermission(mActivity);
     }
 }
