@@ -1,6 +1,5 @@
 package com.prayag.arch.sla.ui;
 
-import android.app.Fragment;
 import android.arch.lifecycle.LifecycleFragment;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -11,12 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import com.prayag.arch.R;
-import com.prayag.arch.sla.dao.CitizenAlert;
-import com.prayag.arch.sla.viewmodel.SlaViewModel;
+import com.prayag.arch.sla.dao.Starships;
+import com.prayag.arch.sla.viewmodel.StarshipsViewModel;
 
 import java.util.List;
 
@@ -27,7 +24,7 @@ import java.util.List;
 public class DeleteFragment extends LifecycleFragment {
 
     private Button buttonAddEvent;
-    SlaViewModel slaViewModel;
+    StarshipsViewModel starshipsViewModel;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -63,28 +60,28 @@ public class DeleteFragment extends LifecycleFragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        slaViewModel = ViewModelProviders.of(getActivity()).get(SlaViewModel.class);
+        starshipsViewModel = ViewModelProviders.of(getActivity()).get(StarshipsViewModel.class);
 
-        observeViewModel(slaViewModel);
+        observeViewModel(starshipsViewModel);
     }
 
     /**
      *
      * @param viewModel
      */
-    private void observeViewModel(SlaViewModel viewModel) {
+    private void observeViewModel(StarshipsViewModel viewModel) {
         // Update the list when the data changes
-        viewModel.getcitizenListObservable().observe(this, new Observer<List<CitizenAlert>>() {
+        viewModel.getStarshipsObservable().observe(this, new Observer<Starships>() {
             @Override
-            public void onChanged(@Nullable List<CitizenAlert> citizenAlerts) {
-                Log.d("sla fragment", citizenAlerts.get(0).getMessage());
+            public void onChanged(@Nullable Starships starships) {
+                Log.d("sla fragment", starships.getNext());
             }
         });
 
     }
 
     public void updateData(){
-        slaViewModel.changeMessage("I am newly updated");
+        //starshipsViewModel.changeMessage("I am newly updated");
     }
 
     /**

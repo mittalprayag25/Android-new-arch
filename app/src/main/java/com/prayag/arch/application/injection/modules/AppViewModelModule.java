@@ -2,8 +2,9 @@ package com.prayag.arch.application.injection.modules;
 
 import android.app.Application;
 
-import com.prayag.arch.sla.dao.TestGag;
+import com.prayag.arch.sla.dao.Starship;
 import com.prayag.arch.application.room.AppDatabase;
+import com.prayag.arch.sla.dao.Starships;
 
 import dagger.Module;
 import dagger.Provides;
@@ -21,8 +22,8 @@ public class AppViewModelModule {
     }
 
     @Provides
-    TestGag provideTest(){
-        return new TestGag();
+    Starships provideStarship(){
+        return new Starships();
     }
 
     @Provides

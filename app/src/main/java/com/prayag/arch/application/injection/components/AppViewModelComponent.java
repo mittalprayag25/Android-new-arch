@@ -3,7 +3,7 @@ package com.prayag.arch.application.injection.components;
 import android.arch.lifecycle.ViewModel;
 
 import com.prayag.arch.application.injection.modules.AppViewModelModule;
-import com.prayag.arch.sla.viewmodel.SlaViewModel;
+import com.prayag.arch.sla.viewmodel.StarshipsViewModel;
 
 import dagger.Component;
 
@@ -14,5 +14,5 @@ import dagger.Component;
 @Component(modules = AppViewModelModule.class)
 public interface AppViewModelComponent {
     void inject(ViewModel slaViewModel);
-    void inject(SlaViewModel slaViewModel);
+    void inject(StarshipsViewModel starshipsViewModel);
 }

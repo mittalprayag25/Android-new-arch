@@ -4,6 +4,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <application
         android:name="com.prayag.arch.application.CountdownApplication"
         android:allowBackup="true"
@@ -13,18 +16,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".user.ui.DaggerActivity">
+        <activity android:name=".planets.ui.PlanetActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".planets.ui.PlanetActivity">
-
-        </activity>
         <activity
-            android:name=".sla.ui.SlaActivity"
+            android:name=".sla.ui.StarshipsActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity android:name=".planets.ui.PlanetDetailActivity">
         </activity>

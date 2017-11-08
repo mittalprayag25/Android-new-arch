@@ -4,8 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 
 import com.prayag.arch.application.util.diQualifier.ActivityContext;
-import com.prayag.arch.application.util.diQualifier.PerActivity;
-import com.prayag.arch.sla.dao.CitizenAlert;
+import com.prayag.arch.sla.dao.Starships;
 
 import dagger.Module;
 import dagger.Provides;
@@ -33,7 +32,7 @@ public class SlaModule {
         return mActivity;
     }
     @Provides
-    CitizenAlert getCitizenAlerts(){
-        return new CitizenAlert();
+    Starships getStarships(){
+        return new Starships();
     }
 }

@@ -6,21 +6,21 @@ import android.arch.persistence.room.RoomDatabase;
 import android.arch.persistence.room.TypeConverters;
 import android.content.Context;
 
-import com.prayag.arch.application.room.converter.DateTypeConverter;
-import com.prayag.arch.application.room.dao.CitizenDao;
+import com.prayag.arch.application.room.converter.DataTypeConverter;
+import com.prayag.arch.application.room.dao.StarShipDao;
 import com.prayag.arch.application.room.dao.EventDao;
 import com.prayag.arch.application.room.entity.Event;
-import com.prayag.arch.application.room.entity.Citizen;
+import com.prayag.arch.application.room.entity.StarshipEntity;
 
 /**
  * Created by pmittal on 02/11/17.
  */
-@Database(entities = {Event.class, Citizen.class}, version = 1)
-@TypeConverters(DateTypeConverter.class)
+@Database(entities = {Event.class, StarshipEntity.class}, version = 2)
+@TypeConverters(DataTypeConverter.class)
 public abstract class AppDatabase  extends RoomDatabase {
 
     public abstract EventDao eventDao();
-    public abstract CitizenDao citizenDao();
+    public abstract StarShipDao starshipsDao();
 
     public static AppDatabase appDatabase;
 
