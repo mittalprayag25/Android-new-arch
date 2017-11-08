@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.prayag.arch.R;
-import com.prayag.arch.application.CountdownApplication;
+import com.prayag.arch.application.UniverseApplication;
 import com.prayag.arch.planets.dao.Planet;
 import com.prayag.arch.planets.injection.components.DaggerPlanetComponent;
 import com.prayag.arch.planets.injection.components.PlanetComponent;
@@ -67,7 +67,7 @@ public class PlanetDetailActivity extends LifecycleActivity implements View.OnCl
     private PlanetComponent getPlanetComponent() {
         if(planetComponent == null){
             planetComponent = DaggerPlanetComponent.builder().planetModule(new PlanetModule(this))
-                    .applicationComponent(CountdownApplication.get(this).getComponent()).build();
+                    .applicationComponent(UniverseApplication.get(this).getComponent()).build();
         }
         return planetComponent;
     }

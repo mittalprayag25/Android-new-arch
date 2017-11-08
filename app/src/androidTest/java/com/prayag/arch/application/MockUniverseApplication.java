@@ -6,7 +6,7 @@ import android.app.Application;
  * Created by pmittal on 06/11/17.
  */
 
-public class MockCountDownApplication extends Application{
+public class MockUniverseApplication extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
