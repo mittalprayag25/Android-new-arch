@@ -5,7 +5,7 @@ import android.content.Context;
 import android.support.test.runner.AndroidJUnit4;
 import android.support.test.runner.AndroidJUnitRunner;
 
-import com.prayag.arch.application.MockCountDownApplication;
+import com.prayag.arch.application.MockUniverseApplication;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +17,7 @@ public class MockTestRunner extends AndroidJUnitRunner {
     @Override
     public Application newApplication(ClassLoader cl, String className, Context context)
             throws InstantiationException, IllegalAccessException, ClassNotFoundException {
-        return super.newApplication(cl, MockCountDownApplication.class.getName(), context);
+        return super.newApplication(cl, MockUniverseApplication.class.getName(), context);
     }
 
     @Test

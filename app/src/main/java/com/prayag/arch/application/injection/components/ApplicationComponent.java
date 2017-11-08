@@ -3,7 +3,7 @@ package com.prayag.arch.application.injection.components;
 import android.app.Application;
 import android.content.Context;
 
-import com.prayag.arch.application.CountdownApplication;
+import com.prayag.arch.application.UniverseApplication;
 import com.prayag.arch.application.injection.modules.ApplicationModule;
 import com.prayag.arch.application.util.diQualifier.ApplicationContext;
 import com.prayag.arch.application.data.DataManager;
@@ -21,7 +21,7 @@ import dagger.Component;
 @Component(modules = {ApplicationModule.class})
 public interface ApplicationComponent {
 
-    void inject(CountdownApplication daggerApplication);
+    void inject(UniverseApplication daggerApplication);
 
     @ApplicationContext
     Context getContext();

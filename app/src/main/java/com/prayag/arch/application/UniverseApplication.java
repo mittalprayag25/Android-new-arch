@@ -13,7 +13,7 @@ import com.prayag.arch.application.injection.modules.ApplicationModule;
 
 import javax.inject.Inject;
 
-public class CountdownApplication extends Application {
+public class UniverseApplication extends Application {
 
     protected ApplicationComponent applicationComponent;
 
@@ -21,8 +21,8 @@ public class CountdownApplication extends Application {
     @Inject
     DataManager mDataManager;
 
-    public static CountdownApplication get(Context context) {
-        return (CountdownApplication) context.getApplicationContext();
+    public static UniverseApplication get(Context context) {
+        return (UniverseApplication) context.getApplicationContext();
     }
 
     @Override

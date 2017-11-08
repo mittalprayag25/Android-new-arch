@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.prayag.arch.R;
-import com.prayag.arch.application.CountdownApplication;
+import com.prayag.arch.application.UniverseApplication;
 import com.prayag.arch.sla.dao.Starship;
 import com.prayag.arch.sla.dao.Starships;
 import com.prayag.arch.sla.injection.components.DaggerSlaComponent;
@@ -63,7 +63,7 @@ public class StarshipsActivity extends LifecycleActivity implements View.OnClick
     private SlaComponent getSlaComponent() {
         if(slaComponent == null){
             slaComponent = DaggerSlaComponent.builder().slaModule(new SlaModule(this))
-                    .applicationComponent(CountdownApplication.get(this).getComponent()).build();
+                    .applicationComponent(UniverseApplication.get(this).getComponent()).build();
         }
         return slaComponent;
     }

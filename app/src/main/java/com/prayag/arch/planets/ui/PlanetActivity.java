@@ -16,7 +16,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.prayag.arch.R;
-import com.prayag.arch.application.CountdownApplication;
+import com.prayag.arch.application.UniverseApplication;
 import com.prayag.arch.application.data.DataManager;
 import com.prayag.arch.application.data.SharedPrefsHelper;
 import com.prayag.arch.application.util.Constants;
@@ -100,7 +100,7 @@ public class PlanetActivity extends LifecycleActivity implements View.OnClickLis
         if(planetComponent == null){
             //TODO calling application component with local activity component here to get dependencies declared in applicationComponent
             planetComponent = DaggerPlanetComponent.builder().planetModule(new PlanetModule(this))
-                    .applicationComponent(CountdownApplication.get(this).getComponent()).build();
+                    .applicationComponent(UniverseApplication.get(this).getComponent()).build();
         }
         return planetComponent;
     }
